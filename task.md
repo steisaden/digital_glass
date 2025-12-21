@@ -1,0 +1,18 @@
+- [x] Scaffold Next.js 14 Project structure
+- [x] Configure Design System
+    - [x] Setup Tailwind CSS with "Luxury" palette
+    - [x] Create `GlassCard` primitive component
+    - [x] Create `NeumorphButton` primitive component
+- [x] Migrate Reference Components
+    - [x] Install Dependencies (`framer-motion`, `lucide-react`)
+    - [x] Verify `globals.css` matches reference structure
+    - [x] Migrate `Navigation`
+    - [x] Migrate `ImpactHero`
+    - [x] Migrate `MetricsSection`
+    - [x] Migrate `TheCollection`
+    - [x] Migrate `Infrastructure`
+    - [x] Migrate `Testimonials`
+    - [x] Migrate `Footer`
+- [ ] Verification
+    - [ ] Visual Check vs Reference
+    - [ ] Mobile Responsiveness Check
