@@ -13,8 +13,20 @@ import { PaperShaderBackground } from "@/components/PaperShaderBackground";
 import { CaseStudyModal } from "@/components/CaseStudyModal";
 import { ConsultationModal } from "@/components/ConsultationModal";
 
+export interface Project {
+  title: string;
+  category: string;
+  location: string;
+  image: string;
+  value: string;
+  description: string;
+  challenge?: string;
+  approach?: string;
+  link?: string;
+}
+
 export default function Home() {
-  const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isContactOpen, setIsContactOpen] = useState(false);
 
   return (
@@ -31,9 +43,9 @@ export default function Home() {
             onContactClick={() => setIsContactOpen(true)}
           />
           <Infrastructure />
-          <Testimonials onContactClick={() => setIsContactOpen(true)} />
+          <Testimonials />
         </main>
-        <Footer />
+        <Footer onContactClick={() => setIsContactOpen(true)} />
       </div>
 
       {/* Modals */}

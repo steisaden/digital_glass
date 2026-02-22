@@ -1,12 +1,16 @@
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
+import ThreeDBackground from "./ThreeDBg";
+import { TiltWidget } from "./TiltWidget";
+import { GlassCard } from "./GlassCard";
 
 export function ImpactHero() {
     return (
         <section className="relative h-screen w-full overflow-hidden">
             {/* Background Image with Overlay */}
-            <div className="absolute inset-0">
-                <div className="absolute inset-0 section-overlay" />
+            <div className="absolute inset-0 z-0">
+                <ThreeDBackground />
+                <div className="absolute inset-0 bg-[#0D0E15]/70 backdrop-blur-[2px]" />
             </div>
 
             {/* Floating Particles Effect */}
@@ -16,17 +20,17 @@ export function ImpactHero() {
                         key={i}
                         className="absolute w-1 h-1 bg-primary/20 rounded-full"
                         initial={{
-                            x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
-                            y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
+                            x: (i * 137) % (typeof window !== 'undefined' ? window.innerWidth : 1000),
+                            y: (i * 271) % (typeof window !== 'undefined' ? window.innerHeight : 1000),
                         }}
                         animate={{
                             y: [0, -30, 0],
                             opacity: [0.2, 0.5, 0.2],
                         }}
                         transition={{
-                            duration: 3 + Math.random() * 2,
+                            duration: 3 + ((i * 17) % 20) / 10,
                             repeat: Infinity,
-                            delay: Math.random() * 2,
+                            delay: ((i * 11) % 20) / 10,
                         }}
                     />
                 ))}
@@ -58,22 +62,34 @@ export function ImpactHero() {
                             </motion.div>
 
                             <motion.h1
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 1, delay: 0.5 }}
-                                className="text-6xl md:text-7xl lg:text-8xl mb-8"
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 1.2, delay: 0.5, type: "spring" }}
+                                className="text-5xl md:text-6xl lg:text-7xl mb-8"
                                 style={{
-                                    fontFamily: 'var(--font-serif)',
+                                    fontFamily: 'var(--font-heading)',
                                     fontWeight: 700,
                                     lineHeight: 1.1,
-                                    letterSpacing: '-0.02em'
+                                    letterSpacing: '-0.03em'
                                 }}
                             >
-                                Immersive Digital
+                                <motion.span
+                                    initial={{ opacity: 0, y: 30 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.8, delay: 0.6 }}
+                                    className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#00E1D9] via-[#4A00E0] to-[#FF007F] animate-pulse shadow-primary/20"
+                                >
+                                    Immersive
+                                </motion.span>
                                 <br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-amber-400 to-primary">
-                                    Experiences
-                                </span>
+                                <motion.span
+                                    initial={{ opacity: 0, y: 30 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.8, delay: 0.8 }}
+                                    className="inline-block"
+                                >
+                                    Digital Experiences
+                                </motion.span>
                             </motion.h1>
 
                             <motion.p
@@ -105,7 +121,7 @@ export function ImpactHero() {
                                 </button>
 
                                 <button
-                                    className="group px-10 py-5 backdrop-blur-xl bg-white/[0.05] hover:bg-white/[0.08] border border-white/10 hover:border-primary/30 text-white rounded-2xl transition-all duration-500"
+                                    className="group px-10 py-5 glass-panel hover:bg-white/[0.1] text-white rounded-2xl transition-all duration-500"
                                     style={{ fontFamily: 'var(--font-sans)', fontWeight: 600 }}
                                 >
                                     <span className="flex items-center gap-3 justify-center">
@@ -115,27 +131,30 @@ export function ImpactHero() {
                                 </button>
                             </motion.div>
                         </div>
-
-
                     </div>
                 </motion.div>
             </div>
 
-            {/* Scroll Indicator */}
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 1.5 }}
-                className="absolute bottom-12 left-1/2 -translate-x-1/2"
-            >
-                <motion.div
-                    animate={{ y: [0, 10, 0] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className="w-6 h-10 border-2 border-white/20 rounded-full flex items-start justify-center p-2"
-                >
-                    <div className="w-1 h-2 bg-primary rounded-full" />
+            {/* Floating Stats Widgets */}
+            <div className="absolute right-12 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-8 z-20 pointer-events-auto">
+                <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 1 }}>
+                    <TiltWidget>
+                        <GlassCard className="p-6 md:p-8 border border-[#00E1D9]/30 !rounded-2xl shadow-[0_0_30px_rgba(0,225,217,0.15)]">
+                            <h4 className="text-4xl font-bold text-[#00E1D9] mb-1">340%</h4>
+                            <p className="text-sm tracking-wider text-slate-300 font-medium uppercase" style={{ fontFamily: 'var(--font-sans)' }}>Avg. ROI</p>
+                        </GlassCard>
+                    </TiltWidget>
                 </motion.div>
-            </motion.div>
+
+                <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 1.2 }}>
+                    <TiltWidget>
+                        <GlassCard className="p-6 md:p-8 border border-[#FF007F]/30 !rounded-2xl shadow-[0_0_30px_rgba(255,0,127,0.15)]">
+                            <h4 className="text-4xl font-bold text-[#FF007F] mb-1">8</h4>
+                            <p className="text-sm tracking-wider text-slate-300 font-medium uppercase" style={{ fontFamily: 'var(--font-sans)' }}>Fortune 500s</p>
+                        </GlassCard>
+                    </TiltWidget>
+                </motion.div>
+            </div>
         </section>
     );
 }

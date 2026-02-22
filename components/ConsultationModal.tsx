@@ -69,13 +69,13 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
                                         <ArrowRight className="w-8 h-8 rotate-[-45deg]" />
                                     </div>
                                     <h3 className="text-3xl font-serif font-bold text-white mb-2">Received</h3>
-                                    <p className="text-slate-400">We'll be in touch shortly.</p>
+                                    <p className="text-slate-400">We&apos;ll be in touch shortly.</p>
                                 </div>
                             ) : (
                                 <>
                                     <div className="mb-10">
                                         <p className="text-primary tracking-widest text-xs uppercase mb-3">Consultation</p>
-                                        <h2 className="text-4xl font-serif font-bold text-white mb-4">Let's talk.</h2>
+                                        <h2 className="text-4xl font-serif font-bold text-white mb-4">Let&apos;s talk.</h2>
                                         <p className="text-slate-400 font-light">
                                             Tell us about your project. We usually respond within 24 hours.
                                         </p>

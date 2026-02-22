@@ -1,20 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0f;
+  --background: #0D0E15;
   --foreground: #ffffff;
-  --card: #0a0a0f;
+  --card: #0D0E15;
   --card-foreground: #ffffff;
-  --popover: #0a0a0f;
+  --popover: #0D0E15;
   --popover-foreground: #ffffff;
-  --primary: #f59e0b;
-  --primary-foreground: #0a0a0f;
-  --secondary: #1e293b;
-  --secondary-foreground: #ffffff;
+  --primary: #4A00E0;
+  --primary-foreground: #ffffff;
+  --secondary: #00E1D9;
+  --secondary-foreground: #0D0E15;
   --muted: #1e293b;
   --muted-foreground: #94a3b8;
-  --accent: #f59e0b;
-  --accent-foreground: #0a0a0f;
+  --accent: #FF007F;
+  --accent-foreground: #ffffff;
   --destructive: #d4183d;
   --destructive-foreground: #ffffff;
   --border: rgba(255, 255, 255, 0.1);
@@ -32,12 +32,12 @@
 
   /* Global transparency control for all sections */
   /* Change this value to adjust the background transparency (0.25 = 25% opacity / 75% transparent) */
-  --section-overlay-opacity: 0.25;
+  --section-overlay-opacity: 0.35;
 }
 
 @theme {
-  --font-sans: var(--font-inter);
-  --font-serif: var(--font-playfair);
+  --font-heading: var(--font-inter);
+  --font-sans: var(--font-geist);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -115,20 +115,52 @@
 
 @layer utilities {
   .section-overlay {
-    background-color: rgba(10, 10, 15, var(--section-overlay-opacity));
+    background-color: rgba(13, 14, 21, var(--section-overlay-opacity));
   }
 
   .glass-panel {
-    @apply bg-white/5 backdrop-blur-2xl backdrop-saturate-150 border border-white/10;
-    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.05);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
+    backdrop-filter: blur(30px) saturate(150%);
+    -webkit-backdrop-filter: blur(30px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
   }
 
   .glass-panel-luxury {
-    @apply bg-gradient-to-br from-white/10 to-white/0 backdrop-blur-3xl backdrop-saturate-150 border-t border-l border-white/20 border-b border-r border-black/20 shadow-2xl;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+    backdrop-filter: blur(40px) saturate(150%);
+    -webkit-backdrop-filter: blur(40px) saturate(150%);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 16px 48px 0 rgba(0, 0, 0, 0.4);
+  }
+
+  .neumorphic-button {
+    background: #0D0E15;
+    border-radius: 50px;
+    box-shadow:
+      8px 8px 16px rgba(0, 0, 0, 0.6),
+      -8px -8px 16px rgba(255, 255, 255, 0.05);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .neumorphic-button:active {
+    box-shadow:
+      inset 8px 8px 16px rgba(0, 0, 0, 0.6),
+      inset -8px -8px 16px rgba(255, 255, 255, 0.05);
+  }
+
+  .neumorphic-well {
+    background: #0D0E15;
+    box-shadow:
+      inset 12px 12px 24px rgba(0, 0, 0, 0.6),
+      inset -12px -12px 24px rgba(255, 255, 255, 0.05);
   }
 
   .text-gold {
-    @apply text-primary;
+    color: var(--gold-accent);
   }
 }
 

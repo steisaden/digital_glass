@@ -13,6 +13,9 @@ interface CaseStudyModalProps {
         image: string;
         value: string;
         description: string;
+        challenge?: string;
+        approach?: string;
+        link?: string;
     } | null;
 }
 
@@ -94,9 +97,15 @@ export function CaseStudyModal({ isOpen, onClose, project }: CaseStudyModalProps
                                     </p>
                                 </div>
 
-                                <button className="px-8 py-4 bg-white text-black rounded-xl font-semibold hover:bg-slate-200 transition-colors flex items-center gap-2 flex-shrink-0">
-                                    View Live <ArrowUpRight className="w-4 h-4" />
-                                </button>
+                                {project.link ? (
+                                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-white text-black rounded-xl font-semibold hover:bg-slate-200 transition-colors flex items-center gap-2 flex-shrink-0">
+                                        View Live <ArrowUpRight className="w-4 h-4" />
+                                    </a>
+                                ) : (
+                                    <button className="px-8 py-4 bg-white text-black rounded-xl font-semibold hover:bg-slate-200 transition-colors flex items-center gap-2 flex-shrink-0">
+                                        View Live <ArrowUpRight className="w-4 h-4" />
+                                    </button>
+                                )}
                             </div>
 
                             <hr className="border-white/10" />
@@ -127,18 +136,14 @@ export function CaseStudyModal({ isOpen, onClose, project }: CaseStudyModalProps
                             <div className="grid md:grid-cols-2 gap-12">
                                 <div>
                                     <h3 className="text-2xl font-serif mb-6 text-white">The Challenge</h3>
-                                    <p className="text-slate-400 leading-relaxed font-light">
-                                        The client approached us with a unique problem: their existing digital presence failed to capture the tangible luxury of their physical assets. They needed a platform that wasn't just functional, but emotional—a digital space where users could feel the weight of quality and the precision of design.
-                                        <br /><br />
-                                        Performance was non-negotiable. With high-fidelity 3D assets and real-time data streams, the architecture needed to be robust enough to handle heavy loads while effectively vanishing into the background of the user experience.
+                                    <p className="text-slate-400 leading-relaxed font-light whitespace-pre-line">
+                                        {project.challenge || `The client approached us with a unique problem: their existing digital presence failed to capture the tangible luxury of their physical assets. They needed a platform that wasn't just functional, but emotional—a digital space where users could feel the weight of quality and the precision of design.\n\nPerformance was non-negotiable. With high-fidelity 3D assets and real-time data streams, the architecture needed to be robust enough to handle heavy loads while effectively vanishing into the background of the user experience.`}
                                     </p>
                                 </div>
                                 <div>
                                     <h3 className="text-2xl font-serif mb-6 text-white">The Approach</h3>
-                                    <p className="text-slate-400 leading-relaxed font-light">
-                                        We leveraged a headless architecture powered by Next.js to ensure lightning-fast navigation. For visual fidelity, we integrated custom WebGL shaders that react to user interaction, creating a sense of "aliveness" without compromising the frame rate.
-                                        <br /><br />
-                                        The interface follows a "Glass & Air" philosophy—translucent layers, generous whitespace, and typography that breathes. Every interaction was micro-calibrated to respond in under 16ms.
+                                    <p className="text-slate-400 leading-relaxed font-light whitespace-pre-line">
+                                        {project.approach || `We leveraged a headless architecture powered by Next.js to ensure lightning-fast navigation. For visual fidelity, we integrated custom WebGL shaders that react to user interaction, creating a sense of \"aliveness\" without compromising the frame rate.\n\nThe interface follows a \"Glass & Air\" philosophy—translucent layers, generous whitespace, and typography that breathes. Every interaction was micro-calibrated to respond in under 16ms.`}
                                     </p>
                                 </div>
                             </div>

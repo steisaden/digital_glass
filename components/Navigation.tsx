@@ -70,7 +70,7 @@ export function Navigation({ onContactClick }: NavigationProps) {
                             className="px-6 py-3 bg-primary hover:bg-amber-400 text-[#0a0a0f] rounded-xl transition-all duration-300"
                             style={{ fontFamily: 'var(--font-sans)', fontWeight: 600 }}
                         >
-                            Let's Talk
+                            Let&apos;s Talk
                         </motion.button>
                     </div>
 
@@ -115,7 +115,7 @@ export function Navigation({ onContactClick }: NavigationProps) {
                                     onContactClick();
                                 }}
                             >
-                                Let's Talk
+                                Let&apos;s Talk
                             </button>
                         </div>
                     </motion.div>
