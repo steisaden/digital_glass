@@ -57,7 +57,7 @@ export function Navigation({ onContactClick }: NavigationProps) {
                     <motion.a
                         href="#"
                         whileHover={{ scale: 1.05 }}
-                        className="text-xl md:text-2xl"
+                        className="text-lg sm:text-xl md:text-2xl"
                         style={{
                             fontFamily: 'var(--font-serif)',
                             fontWeight: 700
