@@ -42,7 +42,7 @@ export function Testimonials() {
     };
 
     return (
-        <section className="relative py-40 px-6 md:px-12 bg-transparent overflow-hidden">
+        <section className="relative py-20 md:py-40 px-6 md:px-12 bg-transparent overflow-hidden">
             {/* Background Effect */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[100px]" />
@@ -84,10 +84,11 @@ export function Testimonials() {
                             const offset = index - currentIndex;
                             const isCenter = offset === 0;
                             // Layout calculations for the cover flow
-                            const xOffset = offset * (typeof window !== 'undefined' && window.innerWidth < 768 ? 200 : 350);
+                            const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+                            const xOffset = offset * (isMobile ? 250 : 350);
                             const zOffset = Math.abs(offset) * -200;
                             const scale = isCenter ? 1 : 0.85;
-                            const opacity = Math.abs(offset) >= 2 ? 0 : isCenter ? 1 : 0.4;
+                            const opacity = Math.abs(offset) >= 2 ? 0 : isCenter ? 1 : (isMobile ? 0 : 0.4);
                             const rotateY = offset * -15; // Angled inward towards the center
 
                             return (

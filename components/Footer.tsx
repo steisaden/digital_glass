@@ -36,14 +36,14 @@ export function Footer({ onContactClick }: FooterProps) {
     }, []);
 
     return (
-        <footer ref={footerRef} className="relative bg-transparent overflow-hidden pt-32 pb-12 border-t border-white/5">
+        <footer ref={footerRef} className="relative bg-transparent overflow-hidden pt-16 md:pt-32 pb-12 border-t border-white/5">
             {/* Background Effects */}
             <div className="absolute inset-0 z-0 opacity-20 bg-[radial-gradient(circle_at_bottom_center,_var(--tw-gradient-stops))] from-primary/30 via-[#0D0E15] to-[#0D0E15]" />
 
             <div ref={contentRef} className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center">
 
                 {/* Massive Neumorphic Well CTA */}
-                <div className="w-full max-w-5xl md:px-16 md:py-24 py-16 px-6 neumorphic-well rounded-[3rem] text-center mb-32 relative group overflow-hidden">
+                <div className="w-full max-w-5xl md:px-16 md:py-24 py-12 px-6 neumorphic-well rounded-[2.5rem] md:rounded-[3rem] text-center mb-16 md:mb-32 relative group overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
 
                     {/* Animated Glow in the Well */}
