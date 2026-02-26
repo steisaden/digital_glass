@@ -10,6 +10,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { Footer } from "@/components/Footer";
 import { LoadingScreen } from "@/components/LoadingScreen";
 import { PaperShaderBackground } from "@/components/PaperShaderBackground";
+import { PricingSection } from "@/components/PricingSection";
 import { CaseStudyModal } from "@/components/CaseStudyModal";
 import { ConsultationModal } from "@/components/ConsultationModal";
 
@@ -43,6 +44,7 @@ export default function Home() {
             onContactClick={() => setIsContactOpen(true)}
           />
           <Infrastructure />
+          <PricingSection />
           <Testimonials />
         </main>
         <Footer onContactClick={() => setIsContactOpen(true)} />

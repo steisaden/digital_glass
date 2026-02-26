@@ -1,42 +1,42 @@
 import { motion } from "motion/react";
-import { Layers, Globe, Zap } from "lucide-react";
+import { Layout, Code, Brain } from "lucide-react";
 import { GlassCard } from "./GlassCard";
 import TechStack3D from "./TechStack3D";
 
 const services = [
     {
-        icon: Layers,
-        title: "Headless Commerce",
-        description: "Decoupled architecture enabling seamless omnichannel experiences with blazing performance and infinite scalability.",
-        features: ["API-First Design", "Multi-Channel Ready", "Enterprise Scale"],
-        colSpan: "md:col-span-8",
-        glow: "hover:shadow-[0_0_40px_rgba(0,225,217,0.15)] group-hover:border-[#00E1D9]/40",
+        icon: Layout,
+        title: "High-End Web Design",
+        description: "Bespoke aesthetics engineered with neuromarketing principles to build immediate trust and maximize conversion rates.",
+        features: ["Bespoke UI/UX", "Conversion Optimized", "Premium Aesthetics"],
+        colSpan: "md:col-span-7",
+        glow: "hover:shadow-[0_0_40px_rgba(255,157,0,0.15)] group-hover:border-[#ff9d00]/40",
     },
     {
-        icon: Globe,
-        title: "Geospatial Intelligence",
-        description: "Advanced mapping and location analytics transforming property data.",
-        features: ["3D Mapping", "Live Analytics"],
-        colSpan: "md:col-span-4",
-        glow: "hover:shadow-[0_0_40px_rgba(255,0,127,0.15)] group-hover:border-[#FF007F]/40",
+        icon: Code,
+        title: "Full-Stack Development",
+        description: "Next-generation frameworks and scalable architectures that deliver blazing fast, bulletproof digital experiences.",
+        features: ["Next.js & React", "Headless Architecture", "Secure & Scalable"],
+        colSpan: "md:col-span-5",
+        glow: "hover:shadow-[0_0_40px_rgba(190,174,96,0.15)] group-hover:border-[#beae60]/40",
     },
     {
-        icon: Zap,
-        title: "Immersive 3D",
-        description: "Photorealistic 3D environments and virtual reality experiences that bring architectural visions to life directly in the browser.",
-        features: ["Virtual Tours", "Real-time Rendering", "Interactive Models", "WebXR Support"],
+        icon: Brain,
+        title: "AI & Automation",
+        description: "Custom Large Language Model integrations, intelligent lead nurturing, and autonomous workflows that streamline your elite operations.",
+        features: ["Custom LLM Integration", "Automated Workflows", "AI Agents"],
         colSpan: "md:col-span-12",
-        glow: "hover:shadow-[0_0_40px_rgba(74,0,224,0.15)] group-hover:border-[#4A00E0]/40",
+        glow: "hover:shadow-[0_0_40px_rgba(215,203,198,0.15)] group-hover:border-[#d7cbc6]/40",
     },
 ];
 
 export function Infrastructure() {
     return (
-        <section id="services" className="relative py-32 px-6 md:px-12 bg-[#0D0E15]">
+        <section id="services" className="relative py-32 px-6 md:px-12 bg-transparent">
             <div className="absolute inset-0 opacity-10">
                 <div className="absolute inset-0"
                     style={{
-                        backgroundImage: `linear-gradient(rgba(0, 225, 217, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 225, 217, 0.1) 1px, transparent 1px)`,
+                        backgroundImage: `linear-gradient(rgba(190, 174, 96, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(190, 174, 96, 0.05) 1px, transparent 1px)`,
                         backgroundSize: '80px 80px'
                     }}
                 />
@@ -51,8 +51,8 @@ export function Infrastructure() {
                     transition={{ duration: 1 }}
                     className="text-center mb-20"
                 >
-                    <p className="text-[#00E1D9] tracking-[0.3em] uppercase text-sm mb-4 font-bold" style={{ fontFamily: 'var(--font-sans)' }}>
-                        Infrastructure
+                    <p className="text-primary tracking-[0.3em] uppercase text-sm mb-4 font-bold" style={{ fontFamily: 'var(--font-sans)' }}>
+                        Elite Solutions
                     </p>
                     <h2
                         className="text-5xl md:text-7xl mb-6 text-white"
@@ -65,8 +65,8 @@ export function Infrastructure() {
                         Core Capabilities
                     </h2>
                     <p className="text-slate-400 text-xl max-w-3xl mx-auto" style={{ fontFamily: 'var(--font-sans)', fontWeight: 300 }}>
-                        Built on cutting-edge technologies that power Fortune 500
-                        enterprises and high-growth startups alike.
+                        Engineered for elite businesses that demand flawless execution,
+                        unmatched security, and measurable performance.
                     </p>
                 </motion.div>
 
@@ -130,7 +130,7 @@ export function Infrastructure() {
                     className="mt-12"
                 >
                     <div className="text-center mb-8 relative z-10">
-                        <p className="text-[#FF007F] tracking-[0.2em] uppercase text-sm font-bold" style={{ fontFamily: 'var(--font-sans)' }}>
+                        <p className="text-primary tracking-[0.2em] uppercase text-sm font-bold" style={{ fontFamily: 'var(--font-sans)' }}>
                             Technology Stack
                         </p>
                         <h3 className="text-3xl text-white mt-2" style={{ fontFamily: 'var(--font-heading)', fontWeight: 600 }}>Enterprise-grade foundations</h3>

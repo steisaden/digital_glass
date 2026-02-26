@@ -42,11 +42,11 @@ export function Testimonials() {
     };
 
     return (
-        <section className="relative py-40 px-6 md:px-12 bg-[#0D0E15] overflow-hidden">
+        <section className="relative py-40 px-6 md:px-12 bg-transparent overflow-hidden">
             {/* Background Effect */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-[#00E1D9]/5 rounded-full blur-[100px]" />
-                <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-[#FF007F]/5 rounded-full blur-[100px]" />
+                <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[100px]" />
+                <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-[100px]" />
             </div>
 
             <div className="relative max-w-7xl mx-auto">
@@ -58,7 +58,7 @@ export function Testimonials() {
                     transition={{ duration: 1 }}
                     className="text-center mb-24"
                 >
-                    <p className="text-[#00E1D9] tracking-[0.3em] uppercase text-sm mb-4 font-bold" style={{ fontFamily: 'var(--font-sans)' }}>
+                    <p className="text-primary tracking-[0.3em] uppercase text-sm mb-4 font-bold" style={{ fontFamily: 'var(--font-sans)' }}>
                         Client Testimonials
                     </p>
                     <h2
@@ -126,7 +126,7 @@ export function Testimonials() {
                                                     {/* Quote Icon */}
                                                     <div className="mb-8">
                                                         <div className="w-16 h-16 rounded-full glass-panel flex items-center justify-center shadow-inner relative overflow-hidden group">
-                                                            <div className="absolute inset-0 bg-gradient-to-br from-[#00E1D9]/20 to-[#FF007F]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                                            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                                             <Quote className="w-8 h-8 text-white z-10" />
                                                         </div>
                                                     </div>
@@ -134,7 +134,7 @@ export function Testimonials() {
                                                     {/* Stars */}
                                                     <div className="flex gap-1.5 mb-8">
                                                         {[...Array(testimonial.rating)].map((_, i) => (
-                                                            <Star key={i} className="w-6 h-6 fill-[#00E1D9] text-[#00E1D9]" />
+                                                            <Star key={i} className="w-6 h-6 fill-primary text-primary" />
                                                         ))}
                                                     </div>
 
@@ -147,7 +147,7 @@ export function Testimonials() {
                                                 {/* Author */}
                                                 <div className="pt-8 border-t border-white/10 flex items-center justify-between">
                                                     <div>
-                                                        <p className="text-[#FF007F] text-lg mb-1" style={{ fontFamily: 'var(--font-sans)', fontWeight: 700 }}>
+                                                        <p className="text-primary text-lg mb-1" style={{ fontFamily: 'var(--font-sans)', fontWeight: 700 }}>
                                                             {testimonial.author}
                                                         </p>
                                                         <p className="text-slate-300 font-medium" style={{ fontFamily: 'var(--font-sans)' }}>
@@ -181,7 +181,7 @@ export function Testimonials() {
                                 <button
                                     key={i}
                                     onClick={() => setCurrentIndex(i)}
-                                    className={`w-2.5 h-2.5 rounded-full transition-all duration-500 ${i === currentIndex ? 'bg-[#00E1D9] w-8' : 'bg-white/30 hover:bg-white/50'}`}
+                                    className={`w-2.5 h-2.5 rounded-full transition-all duration-500 ${i === currentIndex ? 'bg-primary w-8' : 'bg-white/30 hover:bg-white/50'}`}
                                 />
                             ))}
                         </div>

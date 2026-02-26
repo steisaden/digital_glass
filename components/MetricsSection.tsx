@@ -5,27 +5,27 @@ import { GlassCard } from "./GlassCard";
 const metrics = [
     {
         icon: TrendingUp,
-        value: "340%",
-        label: "Average ROI",
-        description: "Across all client projects",
+        value: "$50M+",
+        label: "Revenue Scaled",
+        description: "Across elite client portfolios",
     },
     {
         icon: Users,
-        value: "8",
-        label: "Fortune 500",
-        description: "Enterprise partnerships",
+        value: "10M+",
+        label: "Users Handled",
+        description: "Via scalable infrastructure",
     },
     {
         icon: Award,
-        value: "24+",
-        label: "Projects",
-        description: "Successfully delivered",
+        value: "40+",
+        label: "Elite Launches",
+        description: "Design & Next.js development",
     },
     {
         icon: Sparkles,
         value: "100%",
-        label: "Satisfaction",
-        description: "Client retention rate",
+        label: "Client Retention",
+        description: "Long-term strategic partnerships",
     },
 ];
 

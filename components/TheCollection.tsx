@@ -7,26 +7,58 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 const projects = [
     {
-        title: "Goddess Hair Sanctuary",
+        title: "Goddess Care Co",
+        tagline: "AI-Powered Luxe Commerce & Wellness",
         category: "Premium E-Commerce",
         location: "Global Digital",
-        image: "https://images.unsplash.com/photo-1639751787355-bbc3ed1fd639?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBsdXh1cnklMjBpbnRlcmlvcnxlbnwxfHx8fDE3NjYxOTk5Mzl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+        image: "/gcc_assets/gcc-admin-dashboard-overview.png",
+        previewVideo: "/gcc_assets/gcc-admin-dashboard-walkthrough.mov",
         value: "$2.4M",
-        description: "AI-powered commerce experience that cuts development costs without sacrificing luxury.",
-        tags: ["3D Visualization", "AI Architecture", "Headless Commerce"],
-        link: "https://goddesscareco.info/"
+        description: "A high-performance digital sanctuary where premium essential oils and yoga booking meet a fluid, glassmorphic interface. Built with an emphasis on data resilience and sub-16ms response times.",
+        challenge: "The core challenge was translating the tangible luxury of physical wellness products into a digital experience without sacrificing performance. Architecturally, we faced an \"invisible failure\" risk—infrastructure inconsistencies (like trailing newlines in Vercel environment variables) were causing silent API failures, rendering the storefront empty. The mission was to build a site that was visually ethereal but technically industrial-grade.",
+        approach: "1. Resilient Headless Architecture\nWe implemented a robust data-fetching layer that sanitizes all incoming infrastructure variables. This \"Resilient Header\" strategy eliminated silent failures and guaranteed a 100% uptime for Contentful data streams across products, blogs, and booking systems.\n\n2. \"Glass & Air\" Interface\nUsing Vanilla CSS and custom shaders, we developed a design system focused on translucency and micro-interactions. Every UI element was calibrated to respond in under 16ms, ensuring a fluid, premium feel that mirrors the luxury of the brand.\n\n3. Dynamic Yoga & Wellness Booking\nAn integrated booking engine using Incremental Static Regeneration (ISR) ensures that services and availability remain up-to-date. Content is re-validated every 60 seconds, providing real-time data accuracy while maintaining the speed of a static site.",
+        tags: ["Resilient Architecture", "Headless Commerce", "ISR Booking"],
+        link: "https://goddesscareco.info/",
+        gallery: [
+            { type: 'image', src: '/gcc_assets/gcc-admin-dashboard-overview.png', alt: 'Admin Dashboard Overview' },
+            { type: 'video', src: '/gcc_assets/gcc-admin-dashboard-walkthrough.mov', alt: 'Admin Dashboard Walkthrough' },
+            { type: 'video', src: '/gcc_assets/gcc-admin-dashboard-walkthrough_blog.mov', alt: 'Blog Management Walkthrough' },
+            { type: 'image', src: '/gcc_assets/gcc-amazon-product-entry-form.png', alt: 'Amazon Product Entry' },
+            { type: 'image', src: '/gcc_assets/gcc-amazon-product-fetcher.png', alt: 'Amazon Product Fetcher' },
+            { type: 'image', src: '/gcc_assets/gcc-blog-post-management.png', alt: 'Blog Post Management' },
+            { type: 'image', src: '/gcc_assets/gcc-product-management.png', alt: 'Product Management' },
+            { type: 'image', src: '/gcc_assets/gcc-sales-analytics-overview.png', alt: 'Sales Analytics' },
+            { type: 'image', src: '/gcc_assets/gcc-social-media-accounts.png', alt: 'Social Media' },
+            { type: 'image', src: '/gcc_assets/gcc-vercel-deployment-status.png', alt: 'Vercel Deployment' },
+            { type: 'image', src: '/gcc_assets/gcc-yoga-availability-calendar.png', alt: 'Yoga Calendar' },
+            { type: 'image', src: '/gcc_assets/gcc-yoga-service-selector-dropdown.png', alt: 'Yoga Service Selector' },
+            { type: 'image', src: '/gcc_assets/gcc-yoga-services-management.png', alt: 'Yoga Services' }
+        ]
     },
     {
-        title: "Philadelphia Property Group",
-        category: "Real Estate Platform",
-        location: "Philadelphia, PA",
-        image: "https://images.unsplash.com/photo-1760372058247-0067beeeef70?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjByZWFsJTIwZXN0YXRlJTIwYnVpbGRpbmd8ZW58MXx8fHwxNzY2MTk5OTM5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-        value: "$8.7M",
-        description: "Geospatial intelligence dashboard with 3D property mapping.",
-        tags: ["WebGL", "Geospatial Data", "Interactive Map"],
+        title: "Monumentaal",
+        tagline: "Heritage Restoration Marketplace",
+        category: "Premium Marketplace",
+        location: "'s-Hertogenbosch, NL",
+        image: "/monumentaal_assets/monumentaal-storefront.png",
+        previewVideo: "/monumentaal_assets/monumentaal-walkthrough.mov",
+        value: "$1.2M",
+        description: "A premium, editorial‑grade platform connecting homeowners of monumental properties with verified local specialists. Features a curated directory, multi-step lead forms, and Stripe subscription onboarding.",
+        challenge: "The objective was to create a highly curated, trust-first marketplace for heritage restoration in 's-Hertogenbosch. The architecture needed to support dynamic service landing pages localized for SEO, while offering a seamless onboarding flow for specialists via Stripe subscriptions.",
+        approach: "Built a robust React 18 + Vite SPA styled with a custom Tailwind heritage design system. We implemented dynamic routing for service pages intended to fetch from Supabase edge functions, and constructed a multi-step lead capture funnel. The UI relies on deep brand consistency using a parchment and Bossche blue color palette, emphasizing editorial authority.",
+        tags: ["React 18", "Supabase", "Stripe API"],
+        gallery: [
+            { type: 'image', src: '/monumentaal_assets/monumentaal-storefront.png', alt: 'Monumentaal Storefront' },
+            { type: 'video', src: '/monumentaal_assets/monumentaal-walkthrough.mov', alt: 'Platform Walkthrough' },
+            { type: 'image', src: '/monumentaal_assets/monumentaal-collection-modal.png', alt: 'Collection Modal' },
+            { type: 'image', src: '/monumentaal_assets/monumentaal-product-detail.png', alt: 'Service Detail' },
+            { type: 'image', src: '/monumentaal_assets/monumentaal-checkout.png', alt: 'Stripe Onboarding' },
+            { type: 'image', src: '/monumentaal_assets/monumentaal-admin-dashboard.png', alt: 'Dashboard' }
+        ]
     },
     {
         title: "Metropolitan Towers",
+        tagline: "VR Immersive Sales",
         category: "Digital Sales Center",
         location: "New York, NY",
         image: "https://images.unsplash.com/photo-1640109229792-a26a0ee366ff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBhcmNoaXRlY3R1cmUlMjBtb2Rlcm58ZW58MXx8fHwxNzY2MTY5MTI5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
@@ -88,7 +120,7 @@ export function TheCollection({ onProjectSelect, onContactClick }: TheCollection
     }, []);
 
     return (
-        <section ref={sectionRef} id="portfolio" className="relative h-screen bg-[#0D0E15]">
+        <section ref={sectionRef} id="portfolio" className="relative h-screen bg-transparent">
             <div className="absolute inset-0 opacity-5">
                 <div className="absolute inset-0"
                     style={{
@@ -100,7 +132,7 @@ export function TheCollection({ onProjectSelect, onContactClick }: TheCollection
 
             <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
                 <div className="px-12 md:px-24 mb-16 shrink-0 relative z-10">
-                    <p className="text-[#FF007F] tracking-[0.3em] uppercase text-sm mb-4" style={{ fontFamily: 'var(--font-sans)' }}>
+                    <p className="text-primary tracking-[0.3em] uppercase text-sm mb-4" style={{ fontFamily: 'var(--font-sans)', fontWeight: 600 }}>
                         The Collection
                     </p>
                     <h2
@@ -126,13 +158,24 @@ export function TheCollection({ onProjectSelect, onContactClick }: TheCollection
                             <div className="relative h-full flex flex-col">
                                 {/* Break-out image container */}
                                 <div className="card-image-wrapper relative flex-1 mx-8 mt-8 rounded-[2rem] overflow-hidden shadow-2xl transition-transform duration-700 group-hover:scale-[1.03] group-hover:-translate-y-4">
-                                    <NextImage
-                                        src={project.image}
-                                        alt={project.title}
-                                        fill
-                                        className="object-cover transition-transform duration-700"
-                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                    />
+                                    {project.previewVideo ? (
+                                        <video
+                                            src={project.previewVideo}
+                                            autoPlay
+                                            muted
+                                            loop
+                                            playsInline
+                                            className="w-full h-full object-cover transition-transform duration-700"
+                                        />
+                                    ) : (
+                                        <NextImage
+                                            src={project.image}
+                                            alt={project.title}
+                                            fill
+                                            className="object-cover transition-transform duration-700"
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                        />
+                                    )}
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#0D0E15]/90 via-transparent to-transparent opacity-80" />
 
                                     <div className="absolute top-6 right-6 backdrop-blur-xl bg-white/[0.1] border border-white/20 rounded-full px-5 py-2">
@@ -146,7 +189,7 @@ export function TheCollection({ onProjectSelect, onContactClick }: TheCollection
                                 <div className="p-8 pb-10 flex flex-col gap-4">
                                     <div className="flex justify-between items-start">
                                         <div>
-                                            <h3 className="text-3xl lg:text-4xl font-semibold mb-2 group-hover:text-[#00E1D9] transition-colors" style={{ fontFamily: 'var(--font-heading)' }}>
+                                            <h3 className="text-3xl lg:text-4xl font-semibold mb-2 group-hover:text-primary transition-colors" style={{ fontFamily: 'var(--font-heading)' }}>
                                                 {project.title}
                                             </h3>
                                             <div className="flex items-center gap-2 text-slate-400">
@@ -185,7 +228,7 @@ export function TheCollection({ onProjectSelect, onContactClick }: TheCollection
                     <div className="w-[85vw] md:w-[60vw] lg:w-[45vw] h-full flex items-center justify-center relative">
                         <div className="absolute inset-4 rounded-[3rem] neumorphic-well flex flex-col items-center justify-center text-center p-12 overflow-hidden group">
                             <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_#4A00E0_0%,_transparent_50%)] group-hover:opacity-20 transition-opacity duration-1000" />
-                            <h3 className="text-4xl md:text-5xl font-bold mb-6 relative z-10" style={{ fontFamily: 'var(--font-heading)' }}>Ready for your <br /><span className="text-[#FF007F]">Digital Twin?</span></h3>
+                            <h3 className="text-4xl md:text-5xl font-bold mb-6 relative z-10" style={{ fontFamily: 'var(--font-heading)' }}>Ready for your <br /><span className="text-primary">Digital Twin?</span></h3>
                             <button
                                 onClick={onContactClick}
                                 className="px-10 py-5 glass-panel text-white hover:bg-white/[0.1] rounded-full transition-all duration-500 inline-flex items-center gap-3 relative z-10"

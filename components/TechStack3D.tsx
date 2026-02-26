@@ -70,11 +70,13 @@ export default function TechStack3D() {
     }), []);
 
     return (
-        <div className="w-full h-[400px] relative pointer-events-none">
-            {/* Edge fades for the infinite scroll illusion */}
-            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#0D0E15] to-transparent z-10" />
-            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#0D0E15] to-transparent z-10" />
-
+        <div
+            className="w-full h-[400px] relative pointer-events-none"
+            style={{
+                WebkitMaskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)',
+                maskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)'
+            }}
+        >
             <Canvas dpr={[1, 1.5]} camera={{ position: [0, 0, 10], fov: 45 }}>
                 <ambientLight intensity={0.5} />
                 <directionalLight position={[10, 10, 10]} intensity={2} color="#00E1D9" />

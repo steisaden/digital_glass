@@ -36,7 +36,7 @@ export function Footer({ onContactClick }: FooterProps) {
     }, []);
 
     return (
-        <footer ref={footerRef} className="relative bg-[#0D0E15] overflow-hidden pt-32 pb-12 border-t border-white/5">
+        <footer ref={footerRef} className="relative bg-transparent overflow-hidden pt-32 pb-12 border-t border-white/5">
             {/* Background Effects */}
             <div className="absolute inset-0 z-0 opacity-20 bg-[radial-gradient(circle_at_bottom_center,_var(--tw-gradient-stops))] from-primary/30 via-[#0D0E15] to-[#0D0E15]" />
 
@@ -50,7 +50,7 @@ export function Footer({ onContactClick }: FooterProps) {
                     <motion.div
                         animate={{ opacity: [0.1, 0.3, 0.1], scale: [1, 1.2, 1] }}
                         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                        className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#4A00E0_0%,_transparent_60%)] pointer-events-none mix-blend-screen"
+                        className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#ff9d00_0%,_transparent_60%)] pointer-events-none mix-blend-screen"
                     />
 
                     <h3
@@ -70,12 +70,12 @@ export function Footer({ onContactClick }: FooterProps) {
 
                     <button
                         onClick={onContactClick}
-                        className="glass-panel-luxury px-12 py-6 rounded-full inline-flex items-center gap-4 group/btn hover:scale-105 transition-all duration-500 relative z-10 bg-white/[0.05] hover:bg-white/[0.1] border border-white/20 hover:border-[#00E1D9]/50 shadow-[0_0_30px_rgba(0,0,0,0.5)] hover:shadow-[0_0_40px_rgba(0,225,217,0.3)]"
+                        className="glass-panel-luxury px-12 py-6 rounded-full inline-flex items-center gap-4 group/btn hover:scale-105 transition-all duration-500 relative z-10 bg-white/[0.05] hover:bg-white/[0.1] border border-white/20 hover:border-primary/50 shadow-[0_0_30px_rgba(0,0,0,0.5)] hover:shadow-primary/30"
                     >
                         <span className="text-white font-bold tracking-widest uppercase text-sm font-sans">
                             Start Your Project
                         </span>
-                        <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center group-hover/btn:bg-[#00E1D9] transition-colors duration-500">
+                        <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center group-hover/btn:brightness-125 transition-all duration-500">
                             <ArrowUpRight className="w-5 h-5 text-[#0D0E15]" />
                         </div>
                     </button>
@@ -84,7 +84,7 @@ export function Footer({ onContactClick }: FooterProps) {
                 <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 pt-16 border-t border-white/5">
                     {/* Brand */}
                     <div>
-                        <h3 className="text-3xl mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#00E1D9] to-primary font-bold" style={{ fontFamily: 'var(--font-heading)' }}>
+                        <h3 className="text-3xl mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#ff9d00] to-[#beae60] font-bold" style={{ fontFamily: 'var(--font-heading)' }}>
                             Digital Glass
                         </h3>
                         <p className="text-slate-400 mb-8" style={{ fontFamily: 'var(--font-sans)', fontWeight: 300 }}>
@@ -111,7 +111,7 @@ export function Footer({ onContactClick }: FooterProps) {
                         <ul className="space-y-4">
                             {["Headless Commerce", "Geospatial Intelligence", "Immersive 3D", "Digital Strategy", "VR Experiences"].map((item, i) => (
                                 <li key={i}>
-                                    <a href="#" className="text-slate-400 hover:text-[#00E1D9] transition-colors duration-300" style={{ fontFamily: 'var(--font-sans)', fontWeight: 300 }}>
+                                    <a href="#" className="text-slate-400 hover:text-primary transition-colors duration-300" style={{ fontFamily: 'var(--font-sans)', fontWeight: 300 }}>
                                         {item}
                                     </a>
                                 </li>
@@ -127,7 +127,7 @@ export function Footer({ onContactClick }: FooterProps) {
                         <ul className="space-y-4">
                             {["About Us", "Portfolio", "Case Studies", "Careers", "Blog"].map((item, i) => (
                                 <li key={i}>
-                                    <a href="#" className="text-slate-400 hover:text-[#00E1D9] transition-colors duration-300" style={{ fontFamily: 'var(--font-sans)', fontWeight: 300 }}>
+                                    <a href="#" className="text-slate-400 hover:text-primary transition-colors duration-300" style={{ fontFamily: 'var(--font-sans)', fontWeight: 300 }}>
                                         {item}
                                     </a>
                                 </li>
@@ -142,20 +142,20 @@ export function Footer({ onContactClick }: FooterProps) {
                         </h4>
                         <ul className="space-y-5">
                             <li className="flex items-start gap-4 text-slate-400 group cursor-pointer" style={{ fontFamily: 'var(--font-sans)', fontWeight: 300 }}>
-                                <div className="p-2 rounded-full glass-panel group-hover:bg-[#FF007F]/20 group-hover:border-[#FF007F]/50 transition-colors">
-                                    <Mail className="w-4 h-4 text-slate-300 group-hover:text-[#FF007F] transition-colors" />
+                                <div className="p-2 rounded-full glass-panel group-hover:bg-primary/20 group-hover:border-primary/50 transition-colors">
+                                    <Mail className="w-4 h-4 text-slate-300 group-hover:text-primary transition-colors" />
                                 </div>
                                 <span className="mt-1 group-hover:text-white transition-colors">hello@digitalglass.com</span>
                             </li>
                             <li className="flex items-start gap-4 text-slate-400 group cursor-pointer" style={{ fontFamily: 'var(--font-sans)', fontWeight: 300 }}>
-                                <div className="p-2 rounded-full glass-panel group-hover:bg-[#FF007F]/20 group-hover:border-[#FF007F]/50 transition-colors">
-                                    <Phone className="w-4 h-4 text-slate-300 group-hover:text-[#FF007F] transition-colors" />
+                                <div className="p-2 rounded-full glass-panel group-hover:bg-primary/20 group-hover:border-primary/50 transition-colors">
+                                    <Phone className="w-4 h-4 text-slate-300 group-hover:text-primary transition-colors" />
                                 </div>
                                 <span className="mt-1 group-hover:text-white transition-colors">+1 (555) 123-4567</span>
                             </li>
                             <li className="flex items-start gap-4 text-slate-400 group cursor-pointer" style={{ fontFamily: 'var(--font-sans)', fontWeight: 300 }}>
-                                <div className="p-2 rounded-full glass-panel group-hover:bg-[#FF007F]/20 group-hover:border-[#FF007F]/50 transition-colors">
-                                    <MapPin className="w-4 h-4 text-slate-300 group-hover:text-[#FF007F] transition-colors" />
+                                <div className="p-2 rounded-full glass-panel group-hover:bg-primary/20 group-hover:border-primary/50 transition-colors">
+                                    <MapPin className="w-4 h-4 text-slate-300 group-hover:text-primary transition-colors" />
                                 </div>
                                 <span className="mt-1 group-hover:text-white transition-colors">New York, NY<br />San Francisco, CA</span>
                             </li>
