@@ -78,7 +78,7 @@ export function Testimonials() {
                 </motion.div>
 
                 {/* Cover Flow Slider */}
-                <div className="relative h-[650px] md:h-[600px] w-full flex items-center justify-center [perspective:1200px] mt-8">
+                <div className="relative h-[500px] md:h-[600px] w-full flex items-center justify-center [perspective:1200px]">
                     <AnimatePresence initial={false}>
                         {testimonials.map((testimonial, index) => {
                             const offset = index - currentIndex;
@@ -168,13 +168,13 @@ export function Testimonials() {
                     </AnimatePresence>
 
                     {/* Pagination / Controls */}
-                    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-6">
+                    <div className="absolute -bottom-16 md:-bottom-24 left-1/2 -translate-x-1/2 flex items-center gap-4 md:gap-6 z-30">
                         <button
                             onClick={() => setCurrentIndex(prev => Math.max(0, prev - 1))}
                             disabled={currentIndex === 0}
-                            className={`w-12 h-12 rounded-full glass-panel flex items-center justify-center transition-all duration-300 ${currentIndex === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-white/[0.1] hover:scale-110'}`}
+                            className={`w-10 h-10 md:w-12 md:h-12 rounded-full glass-panel flex items-center justify-center transition-all duration-300 ${currentIndex === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-white/[0.1] hover:scale-110'}`}
                         >
-                            <ChevronLeft className="w-6 h-6 text-white" />
+                            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-white" />
                         </button>
 
                         <div className="flex gap-2">
@@ -190,9 +190,9 @@ export function Testimonials() {
                         <button
                             onClick={() => setCurrentIndex(prev => Math.min(testimonials.length - 1, prev + 1))}
                             disabled={currentIndex === testimonials.length - 1}
-                            className={`w-12 h-12 rounded-full glass-panel flex items-center justify-center transition-all duration-300 ${currentIndex === testimonials.length - 1 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-white/[0.1] hover:scale-110'}`}
+                            className={`w-10 h-10 md:w-12 md:h-12 rounded-full glass-panel flex items-center justify-center transition-all duration-300 ${currentIndex === testimonials.length - 1 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-white/[0.1] hover:scale-110'}`}
                         >
-                            <ChevronRight className="w-6 h-6 text-white" />
+                            <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-white" />
                         </button>
                     </div>
                 </div>
