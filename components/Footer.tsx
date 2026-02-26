@@ -17,16 +17,16 @@ export function Footer({ onContactClick }: FooterProps) {
         if (typeof window !== "undefined") {
             gsap.registerPlugin(ScrollTrigger);
 
-            // GSAP curtain reveal effect: The content starts pushed up and naturally slides down into place as the footer is revealed.
+            // GSAP subtle reveal effect
             gsap.fromTo(contentRef.current,
-                { yPercent: -30, opacity: 0.5 },
+                { y: 50, opacity: 0 },
                 {
-                    yPercent: 0,
+                    y: 0,
                     opacity: 1,
-                    ease: "none",
+                    ease: "power2.out",
                     scrollTrigger: {
                         trigger: footerRef.current,
-                        start: "top bottom",
+                        start: "top 80%",
                         end: "bottom bottom",
                         scrub: 1,
                     }
@@ -36,7 +36,7 @@ export function Footer({ onContactClick }: FooterProps) {
     }, []);
 
     return (
-        <footer ref={footerRef} className="relative bg-transparent overflow-hidden pt-16 md:pt-32 pb-12 border-t border-white/5">
+        <footer ref={footerRef} className="relative z-10 bg-transparent overflow-hidden pt-16 md:pt-32 pb-12 border-t border-white/5">
             {/* Background Effects */}
             <div className="absolute inset-0 z-0 opacity-20 bg-[radial-gradient(circle_at_bottom_center,_var(--tw-gradient-stops))] from-primary/30 via-[#0D0E15] to-[#0D0E15]" />
 

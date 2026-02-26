@@ -42,7 +42,7 @@ export function Testimonials() {
     };
 
     return (
-        <section className="relative py-20 md:py-40 px-6 md:px-12 bg-transparent overflow-hidden">
+        <section className="relative py-20 md:py-40 pb-32 md:pb-48 px-6 md:px-12 bg-transparent overflow-hidden">
             {/* Background Effect */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[100px]" />
@@ -78,7 +78,7 @@ export function Testimonials() {
                 </motion.div>
 
                 {/* Cover Flow Slider */}
-                <div className="relative h-[500px] md:h-[600px] w-full flex items-center justify-center [perspective:1200px]">
+                <div className="relative h-[650px] md:h-[600px] w-full flex items-center justify-center [perspective:1200px] mt-8">
                     <AnimatePresence initial={false}>
                         {testimonials.map((testimonial, index) => {
                             const offset = index - currentIndex;
@@ -168,7 +168,7 @@ export function Testimonials() {
                     </AnimatePresence>
 
                     {/* Pagination / Controls */}
-                    <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-6">
+                    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-6">
                         <button
                             onClick={() => setCurrentIndex(prev => Math.max(0, prev - 1))}
                             disabled={currentIndex === 0}
