@@ -43,7 +43,7 @@ export function Footer({ onContactClick }: FooterProps) {
             <div ref={contentRef} className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center">
 
                 {/* Massive Neumorphic Well CTA */}
-                <div className="w-full max-w-5xl md:px-16 md:py-24 py-12 px-6 neumorphic-well rounded-[2.5rem] md:rounded-[3rem] text-center mb-16 md:mb-32 relative group overflow-hidden">
+                <div className="w-full max-w-5xl md:px-16 md:py-24 py-12 px-4 sm:px-6 neumorphic-well rounded-[2.5rem] md:rounded-[3rem] text-center mb-16 md:mb-32 mt-12 md:mt-0 relative group overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
 
                     {/* Animated Glow in the Well */}
@@ -54,7 +54,7 @@ export function Footer({ onContactClick }: FooterProps) {
                     />
 
                     <h3
-                        className="text-4xl md:text-6xl mb-8 text-white relative z-10"
+                        className="text-3xl sm:text-4xl md:text-6xl mb-6 md:mb-8 text-white relative z-10"
                         style={{
                             fontFamily: 'var(--font-heading)',
                             fontWeight: 700,
@@ -64,7 +64,7 @@ export function Footer({ onContactClick }: FooterProps) {
                         Ready to Elevate <br className="hidden md:block" /> Your Brand?
                     </h3>
 
-                    <p className="text-slate-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto relative z-10" style={{ fontFamily: 'var(--font-sans)', fontWeight: 300 }}>
+                    <p className="text-slate-400 text-base sm:text-lg md:text-xl mb-10 md:mb-12 max-w-2xl mx-auto relative z-10 px-2" style={{ fontFamily: 'var(--font-sans)', fontWeight: 300 }}>
                         Join the ranks of industry leaders who trust us to deliver extraordinary, high-performance digital environments.
                     </p>
 
