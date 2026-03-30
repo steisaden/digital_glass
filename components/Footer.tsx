@@ -149,7 +149,7 @@ export function Footer({ onContactClick }: FooterProps) {
                                 <div className="p-2 rounded-full glass-panel group-hover:bg-primary/20 group-hover:border-primary/50 transition-colors">
                                     <Phone className="w-4 h-4 text-slate-300 group-hover:text-primary transition-colors" />
                                 </div>
-                                <span className="mt-1 group-hover:text-white transition-colors">+1 (971)357-9090 WhatsApp only</span>
+                                <span className="mt-1 group-hover:text-white transition-colors">+1 (971)357-9090 WhatsApp</span>
                             </li>
                             <li className="flex items-start gap-4 text-slate-400 group cursor-pointer" style={{ fontFamily: "var(--font-sans)", fontWeight: 300 }}>
                                 <div className="p-2 rounded-full glass-panel group-hover:bg-primary/20 group-hover:border-primary/50 transition-colors">
