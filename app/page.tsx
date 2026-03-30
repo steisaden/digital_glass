@@ -24,7 +24,13 @@ export interface Project {
   problem: string;
   solution: string;
   results: string;
+  outcomeHeadline: string;
   resultMetrics: string[];
+  metrics: Array<{
+    value: string;
+    label: string;
+    detail: string;
+  }>;
   cta: string;
   previewVideo?: string;
   link?: string;

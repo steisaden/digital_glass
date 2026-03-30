@@ -103,6 +103,10 @@ export function CaseStudyModal({ isOpen, onClose, project }: CaseStudyModalProps
                                         <p className="text-xl text-slate-400 leading-relaxed max-w-2xl font-light">
                                             {project.description}
                                         </p>
+                                        <div className="mt-6 rounded-2xl border border-primary/20 bg-primary/10 px-5 py-4 max-w-2xl">
+                                            <p className="text-xs uppercase tracking-[0.2em] text-primary mb-2">Outcome</p>
+                                            <p className="text-white leading-relaxed">{project.outcomeHeadline}</p>
+                                        </div>
                                     </div>
 
                                     {project.link ? (
@@ -126,6 +130,23 @@ export function CaseStudyModal({ isOpen, onClose, project }: CaseStudyModalProps
                                     <div>
                                         <p className="text-sm text-slate-500 uppercase tracking-widest mb-2">Results</p>
                                         <p className="text-lg text-white leading-relaxed">{project.results}</p>
+                                    </div>
+                                </div>
+
+                                <hr className="border-white/10" />
+
+                                <div>
+                                    <h3 className="text-2xl font-serif mb-6 text-white">Measured Results</h3>
+                                    <div className="grid md:grid-cols-3 gap-4">
+                                        {project.metrics.map((metric) => (
+                                            <div key={metric.label} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+                                                <p className="text-3xl text-white mb-2" style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}>
+                                                    {metric.value}
+                                                </p>
+                                                <p className="text-xs uppercase tracking-[0.2em] text-primary mb-3">{metric.label}</p>
+                                                <p className="text-slate-300 leading-relaxed">{metric.detail}</p>
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
 

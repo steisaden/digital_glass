@@ -18,26 +18,31 @@ export function Footer({ onContactClick }: FooterProps) {
         if (typeof window !== "undefined") {
             gsap.registerPlugin(ScrollTrigger);
 
-            gsap.fromTo(
-                contentRef.current,
-                { yPercent: -30, opacity: 0.5 },
-                {
-                    yPercent: 0,
-                    opacity: 1,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: footerRef.current,
-                        start: "top bottom",
-                        end: "bottom bottom",
-                        scrub: 1,
-                    },
-                }
-            );
+            const ctx = gsap.context(() => {
+                gsap.fromTo(
+                    contentRef.current,
+                    { y: 100, opacity: 0 },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 1,
+                        ease: "power2.out",
+                        scrollTrigger: {
+                            trigger: footerRef.current,
+                            start: "top 85%",
+                            end: "bottom bottom",
+                            toggleActions: "play none none reverse",
+                        },
+                    }
+                );
+            });
+
+            return () => ctx.revert();
         }
     }, []);
 
     return (
-        <footer ref={footerRef} className="relative z-10 bg-transparent overflow-hidden pt-16 md:pt-32 pb-12 border-t border-white/5">
+        <footer ref={footerRef} className="relative z-10 bg-transparent pt-16 md:pt-32 pb-12 border-t border-white/5">
             <div className="absolute inset-0 z-0 opacity-20 bg-[radial-gradient(circle_at_bottom_center,_var(--tw-gradient-stops))] from-primary/30 via-[#0D0E15] to-[#0D0E15]" />
 
             <div ref={contentRef} className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center">

@@ -46,7 +46,7 @@ export function Testimonials({ onContactClick }: TestimonialsProps) {
     };
 
     return (
-        <section className="relative py-20 md:py-40 pb-32 md:pb-48 px-6 md:px-12 bg-transparent overflow-hidden">
+        <section className="relative pt-20 md:pt-40 pb-32 md:pb-48 px-6 md:px-12 bg-transparent overflow-hidden">
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[100px]" />
                 <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-[100px]" />
@@ -78,7 +78,7 @@ export function Testimonials({ onContactClick }: TestimonialsProps) {
                     </p>
                 </motion.div>
 
-                <div className="relative h-[560px] md:h-[600px] w-full flex items-center justify-center [perspective:1200px]">
+                <div className="relative h-[650px] sm:h-[600px] w-full flex items-center justify-center [perspective:1200px]">
                     <AnimatePresence initial={false}>
                         {testimonials.map((testimonial, index) => {
                             const offset = index - currentIndex;
@@ -188,7 +188,7 @@ export function Testimonials({ onContactClick }: TestimonialsProps) {
                     </div>
                 </div>
 
-                <div className="mt-32 md:mt-40 flex justify-center">
+                <div className="mt-32 md:mt-40 flex justify-center relative z-30">
                     <button
                         onClick={onContactClick}
                         className="px-8 py-4 bg-primary hover:bg-amber-400 text-[#0a0a0f] rounded-2xl transition-all duration-300 font-semibold"

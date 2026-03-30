@@ -6,8 +6,13 @@ const services = [
     {
         icon: Layout,
         title: "Lead Engine Websites",
-        description: "Mobile-first, conversion-driven websites that capture qualified leads and move visitors toward a booked call or purchase decision.",
-        features: ["Faster lead capture", "Clear offers and CTAs", "Mobile-first conversion paths"],
+        description: "Mobile-first, conversion-driven websites built to turn traffic into qualified inquiries with clearer offers, stronger trust signals, and fewer dead-end clicks.",
+        features: ["Capture more qualified leads", "Shorter path to inquiry", "Conversion-first mobile UX"],
+        outcomes: [
+            "Built localized service pages for SEO-driven demand capture",
+            "Structured multi-step lead funnels for higher-intent inquiries",
+            "Designed CTA paths that move visitors toward booked calls or forms",
+        ],
         colSpan: "md:col-span-7",
         glow: "hover:shadow-[0_0_40px_rgba(255,157,0,0.15)] group-hover:border-[#ff9d00]/40",
         cta: "Book lead engine build",
@@ -15,8 +20,13 @@ const services = [
     {
         icon: Bot,
         title: "AI Follow-Up System",
-        description: "AI systems that automatically generate and nurture leads, send timely follow-up, and keep prospects engaged until your team takes over.",
-        features: ["Automated nurturing", "Faster response times", "Higher appointment show rates"],
+        description: "AI follow-up systems that engage prospects automatically, reduce lead drop-off, and keep outreach running between first touch and sales handoff.",
+        features: ["Reduce lead loss", "Faster response windows", "Always-on nurture flows"],
+        outcomes: [
+            "Automates follow-up after form fills, bookings, or inquiries",
+            "Keeps prospects warm without adding manual sales admin",
+            "Supports cleaner handoffs into CRM or operator workflows",
+        ],
         colSpan: "md:col-span-5",
         glow: "hover:shadow-[0_0_40px_rgba(190,174,96,0.15)] group-hover:border-[#beae60]/40",
         cta: "Book AI follow-up build",
@@ -24,8 +34,13 @@ const services = [
     {
         icon: Workflow,
         title: "Custom Automation Build",
-        description: "Full-stack automation for business operations that replaces repetitive manual workflows, connects tools, and gives your team back execution time.",
-        features: ["Less admin work", "Connected operations", "Custom internal systems"],
+        description: "Custom automation that connects your tools, reduces repetitive manual steps, and gives operators faster access to the data and workflows they need.",
+        features: ["Reduce manual workload", "Connect fragmented systems", "Free up operator time"],
+        outcomes: [
+            "Centralizes analytics and workflow visibility in one place",
+            "Cuts repeated handoffs between tools and team members",
+            "Improves execution speed across admin-heavy processes",
+        ],
         colSpan: "md:col-span-12",
         glow: "hover:shadow-[0_0_40px_rgba(215,203,198,0.15)] group-hover:border-[#d7cbc6]/40",
         cta: "Book automation consult",
@@ -68,10 +83,10 @@ export function Infrastructure({ onContactClick }: InfrastructureProps) {
                             letterSpacing: "-0.02em",
                         }}
                     >
-                        Systems that produce leads, follow-up, and operational leverage
+                        Offers built around revenue and operational outcomes
                     </h2>
                     <p className="text-slate-400 text-xl max-w-3xl mx-auto" style={{ fontFamily: "var(--font-sans)", fontWeight: 300 }}>
-                        Each offer is designed around client outcomes: more qualified inquiries, faster sales response, and less time wasted on manual tasks.
+                        The message is simple: capture more qualified leads, follow up faster, and remove manual work that slows down your team.
                     </p>
                 </motion.div>
 
@@ -117,6 +132,14 @@ export function Infrastructure({ onContactClick }: InfrastructureProps) {
                                                             <span key={feature} className="px-4 py-1.5 text-xs tracking-wider uppercase font-semibold text-slate-300 glass-panel rounded-full">
                                                                 {feature}
                                                             </span>
+                                                        ))}
+                                                    </div>
+
+                                                    <div className="space-y-2">
+                                                        {service.outcomes.map((outcome) => (
+                                                            <p key={outcome} className="text-sm text-slate-300 leading-relaxed">
+                                                                {outcome}
+                                                            </p>
                                                         ))}
                                                     </div>
 

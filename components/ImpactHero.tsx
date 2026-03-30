@@ -47,7 +47,7 @@ export function ImpactHero({ onContactClick }: ImpactHeroProps) {
                                     transition={{ duration: 0.8, delay: 0.6 }}
                                     className="inline-block"
                                 >
-                                    AI systems, conversion websites, and automation infrastructure
+                                    Lead generation websites, AI follow-up systems, and automation infrastructure
                                 </motion.span>
                                 <br />
                                 <motion.span
@@ -67,7 +67,7 @@ export function ImpactHero({ onContactClick }: ImpactHeroProps) {
                                 className="text-slate-300 text-lg md:text-2xl mb-8 md:mb-12 max-w-3xl leading-relaxed"
                                 style={{ fontFamily: "var(--font-sans)", fontWeight: 300 }}
                             >
-                                We build lead generation websites, AI follow-up systems, and custom automations that turn traffic into booked calls, keep prospects engaged, and remove repetitive operational work from your team.
+                                Digital Glass helps service businesses, operators, and e-commerce brands generate more qualified leads, reduce lead loss after first contact, and remove repetitive work from the sales and operations team.
                             </motion.p>
 
                             <motion.div
@@ -77,9 +77,9 @@ export function ImpactHero({ onContactClick }: ImpactHeroProps) {
                                 className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 md:mb-12"
                             >
                                 {[
-                                    "Capture more qualified leads from mobile and desktop traffic.",
-                                    "Automate follow-up so prospects do not go cold after first contact.",
-                                    "Replace admin-heavy workflows with custom systems your team can actually use.",
+                                    "Lead Engine Websites designed to capture more qualified leads.",
+                                    "AI Follow-Up Systems that engage prospects automatically and reduce lead loss.",
+                                    "Custom Automation that frees up your team by reducing manual workflows.",
                                 ].map((item) => (
                                     <div key={item} className="glass-panel rounded-2xl px-5 py-4 text-sm text-slate-200">
                                         {item}
