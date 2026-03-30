@@ -18,13 +18,30 @@ const projects: Project[] = [
         problem: "The business needed a storefront and booking experience that felt premium while still handling product sales, yoga scheduling, and content updates without silent technical failures.",
         solution: "We built a conversion-focused commerce experience with resilient data handling, automated content workflows, and a booking system connected to the wider operating stack.",
         results: "The client gained a faster lead-to-booking path, fewer operational bottlenecks, and a more reliable storefront for daily sales and scheduling.",
+        outcomeHeadline: "A more reliable lead-to-booking and commerce workflow.",
         resultMetrics: [
             "100% uptime for sanitized Contentful data streams",
             "Content and booking updates revalidated every 60 seconds",
             "Sub-16ms interface interactions across key UI flows",
         ],
+        metrics: [
+            {
+                value: "100%",
+                label: "Sanitized data uptime",
+                detail: "Contentful data streams kept running after infrastructure hardening.",
+            },
+            {
+                value: "60s",
+                label: "Refresh window",
+                detail: "Content and booking updates are revalidated every 60 seconds.",
+            },
+            {
+                value: "<16ms",
+                label: "UI response target",
+                detail: "Key interactions were tuned for fast, fluid usage across the storefront.",
+            },
+        ],
         cta: "See how this works for your business",
-        link: "https://goddesscareco.info/",
         year: "2024",
         gallery: [
             { type: "image", src: "/gcc_assets/gcc-admin-dashboard-overview.png", alt: "Admin Dashboard Overview" },
@@ -52,10 +69,28 @@ const projects: Project[] = [
         problem: "The client needed a trust-first marketplace that could attract qualified homeowners, educate them through service pages, and convert specialists into paying partners.",
         solution: "We built localized service landing pages, a multi-step lead capture funnel, and Stripe subscription onboarding for specialist acquisition.",
         results: "The platform created a clearer path from search traffic to qualified inquiries while reducing manual intake work for both sides of the marketplace.",
+        outcomeHeadline: "A clearer path from search demand to qualified homeowner inquiries.",
         resultMetrics: [
             "Localized service pages built for SEO-driven demand capture",
             "Multi-step lead funnel for higher-intent inquiries",
             "Stripe onboarding flow for specialist subscriptions",
+        ],
+        metrics: [
+            {
+                value: "SEO",
+                label: "Demand capture layer",
+                detail: "Localized service pages were structured to attract and qualify search traffic.",
+            },
+            {
+                value: "Multi-step",
+                label: "Lead qualification flow",
+                detail: "The inquiry journey collects higher-intent information before handoff.",
+            },
+            {
+                value: "Stripe",
+                label: "Specialist onboarding",
+                detail: "Subscription onboarding reduces friction for provider acquisition.",
+            },
         ],
         cta: "See how this works for your business",
         year: "2024",
@@ -77,10 +112,28 @@ const projects: Project[] = [
         problem: "Operators were juggling disconnected tools, manual updates, and repetitive admin tasks that slowed down response times and reporting.",
         solution: "We centralized operational data into custom dashboards, connected recurring tasks to automation flows, and surfaced the metrics teams need to act faster.",
         results: "The business gained tighter visibility into sales activity, lower manual workload, and a more dependable operating system for scale.",
+        outcomeHeadline: "Less admin drag and faster access to the data operators need.",
         resultMetrics: [
             "Centralized analytics and admin visibility",
             "Fewer repeated manual handoffs across operations",
             "Faster access to sales and workflow data",
+        ],
+        metrics: [
+            {
+                value: "1 view",
+                label: "Centralized visibility",
+                detail: "Sales and workflow data were brought into one operating interface.",
+            },
+            {
+                value: "Fewer handoffs",
+                label: "Manual work reduced",
+                detail: "Automation removed repeated copy-paste and routing tasks.",
+            },
+            {
+                value: "Faster access",
+                label: "Operator decision speed",
+                detail: "Teams can act without waiting on scattered systems or reports.",
+            },
         ],
         cta: "See how this works for your business",
         year: "2024",
@@ -116,10 +169,10 @@ export function TheCollection({ onProjectSelect, onContactClick }: TheCollection
                             letterSpacing: "-0.02em",
                         }}
                     >
-                        Case studies built around business problems, not pretty screenshots
+                        Real-world builds framed around business outcomes
                     </h2>
                     <p className="text-slate-400 text-lg md:text-xl max-w-3xl mx-auto" style={{ fontFamily: "var(--font-sans)", fontWeight: 300 }}>
-                        Each engagement is framed around the issue, the system we built, and the measurable operational outcome.
+                        Each case study shows the problem, the system Digital Glass built, and the measurable or operational result created for the client.
                     </p>
                 </motion.div>
 
@@ -181,6 +234,10 @@ export function TheCollection({ onProjectSelect, onContactClick }: TheCollection
                                     </div>
 
                                     <div className="space-y-4 mb-6">
+                                        <div className="rounded-2xl border border-primary/20 bg-primary/10 px-4 py-3">
+                                            <p className="text-sm text-primary uppercase tracking-[0.2em] mb-2">Outcome</p>
+                                            <p className="text-slate-100 leading-relaxed">{project.outcomeHeadline}</p>
+                                        </div>
                                         <div>
                                             <p className="text-primary text-xs uppercase tracking-[0.2em] mb-2">Problem</p>
                                             <p className="text-slate-300 text-sm leading-relaxed">{project.problem}</p>
@@ -193,6 +250,18 @@ export function TheCollection({ onProjectSelect, onContactClick }: TheCollection
                                             <p className="text-primary text-xs uppercase tracking-[0.2em] mb-2">Results</p>
                                             <p className="text-slate-300 text-sm leading-relaxed">{project.results}</p>
                                         </div>
+                                    </div>
+
+                                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
+                                        {project.metrics.map((metric) => (
+                                            <div key={metric.label} className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+                                                <p className="text-xl text-white mb-1" style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}>
+                                                    {metric.value}
+                                                </p>
+                                                <p className="text-xs uppercase tracking-[0.18em] text-primary mb-2">{metric.label}</p>
+                                                <p className="text-xs text-slate-400 leading-relaxed">{metric.detail}</p>
+                                            </div>
+                                        ))}
                                     </div>
 
                                     <div className="flex flex-wrap gap-2 mb-6">
