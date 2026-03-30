@@ -41,6 +41,10 @@ const projects: Project[] = [
                 detail: "Key interactions were tuned for fast, fluid usage across the storefront.",
             },
         ],
+        placeholderMetrics: [
+            "[Placeholder] +22% more qualified booking requests in the first 60 days",
+            "[Placeholder] 12 hours per week saved by reducing manual content and booking coordination",
+        ],
         cta: "See how this works for your business",
         year: "2024",
         gallery: [
@@ -92,6 +96,10 @@ const projects: Project[] = [
                 detail: "Subscription onboarding reduces friction for provider acquisition.",
             },
         ],
+        placeholderMetrics: [
+            "[Placeholder] +35% more qualified homeowner leads from organic traffic",
+            "[Placeholder] 20% faster specialist onboarding from first visit to subscription",
+        ],
         cta: "See how this works for your business",
         year: "2024",
         gallery: [
@@ -135,6 +143,10 @@ const projects: Project[] = [
                 detail: "Teams can act without waiting on scattered systems or reports.",
             },
         ],
+        placeholderMetrics: [
+            "[Placeholder] 15 hours saved per week across operations and reporting",
+            "[Placeholder] 18% lower admin cost on repeated internal workflows",
+        ],
         cta: "See how this works for your business",
         year: "2024",
     },
@@ -173,6 +185,9 @@ export function TheCollection({ onProjectSelect, onContactClick }: TheCollection
                     </h2>
                     <p className="text-slate-400 text-lg md:text-xl max-w-3xl mx-auto" style={{ fontFamily: "var(--font-sans)", fontWeight: 300 }}>
                         Each case study shows the problem, the system Digital Glass built, and the measurable or operational result created for the client.
+                    </p>
+                    <p className="text-slate-500 text-sm max-w-3xl mx-auto mt-4" style={{ fontFamily: "var(--font-sans)" }}>
+                        Bracketed figures below are placeholder case-study slots. Replace them with client-approved numbers before publishing.
                     </p>
                 </motion.div>
 
@@ -270,6 +285,17 @@ export function TheCollection({ onProjectSelect, onContactClick }: TheCollection
                                                 {metric}
                                             </span>
                                         ))}
+                                    </div>
+
+                                    <div className="rounded-2xl border border-dashed border-primary/30 bg-primary/5 p-4 mb-6">
+                                        <p className="text-xs uppercase tracking-[0.2em] text-primary mb-3">Case Study Metric Slots</p>
+                                        <div className="space-y-2">
+                                            {project.placeholderMetrics.map((metric) => (
+                                                <p key={metric} className="text-sm text-slate-300 leading-relaxed">
+                                                    {metric}
+                                                </p>
+                                            ))}
+                                        </div>
                                     </div>
 
                                     <button

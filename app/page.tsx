@@ -31,6 +31,7 @@ export interface Project {
     label: string;
     detail: string;
   }>;
+  placeholderMetrics: string[];
   cta: string;
   previewVideo?: string;
   link?: string;

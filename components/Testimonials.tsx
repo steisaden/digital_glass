@@ -76,6 +76,9 @@ export function Testimonials({ onContactClick }: TestimonialsProps) {
                     <p className="text-slate-400 text-xl max-w-3xl mx-auto" style={{ fontFamily: "var(--font-sans)", fontWeight: 300 }}>
                         This section is structured as proof of execution using concrete outcomes from the systems shown above. Replace these with direct client quotes when you are ready to publish them.
                     </p>
+                    <p className="text-slate-500 text-sm max-w-3xl mx-auto mt-4" style={{ fontFamily: "var(--font-sans)" }}>
+                        Pair these outcomes with client-approved metrics such as qualified leads generated, sales-cycle reduction, time saved per week, or cost savings.
+                    </p>
                 </motion.div>
 
                 <div className="relative h-[650px] sm:h-[600px] w-full flex items-center justify-center [perspective:1200px]">

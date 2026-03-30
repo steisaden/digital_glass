@@ -153,6 +153,24 @@ export function CaseStudyModal({ isOpen, onClose, project }: CaseStudyModalProps
                                 <hr className="border-white/10" />
 
                                 <div>
+                                    <h3 className="text-2xl font-serif mb-6 text-white">Client-Approved Metric Slots</h3>
+                                    <div className="rounded-2xl border border-dashed border-primary/30 bg-primary/5 p-6">
+                                        <p className="text-sm text-slate-400 mb-4">
+                                            Use these placeholders to prepare the sales version of the case study. Replace each one with real numbers before publishing.
+                                        </p>
+                                        <div className="space-y-3">
+                                            {project.placeholderMetrics.map((metric) => (
+                                                <p key={metric} className="text-slate-200 leading-relaxed">
+                                                    {metric}
+                                                </p>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr className="border-white/10" />
+
+                                <div>
                                     <h3 className="text-2xl font-serif mb-6 text-white">Outcome Highlights</h3>
                                     <div className="grid md:grid-cols-3 gap-4">
                                         {project.resultMetrics.map((metric) => (

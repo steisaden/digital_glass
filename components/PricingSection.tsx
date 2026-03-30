@@ -16,6 +16,7 @@ const plans = [
             "Messaging focused on offer clarity and booked calls",
             "Launch support and handoff documentation",
         ],
+        outcomes: "Designed to increase qualified inquiries and improve landing-page conversion.",
         cta: "Book website build",
         popular: false,
     },
@@ -32,6 +33,7 @@ const plans = [
             "Visibility into pipeline and follow-up performance",
             "Integration with your existing sales stack where possible",
         ],
+        outcomes: "Designed to shorten response times and keep more prospects engaged until handoff.",
         cta: "Automate follow-up",
         popular: true,
     },
@@ -48,6 +50,7 @@ const plans = [
             "Reduced manual workload across admin-heavy processes",
             "Ongoing iteration for complex operating environments",
         ],
+        outcomes: "Designed to save operator time, reduce admin drag, and lower repeated execution costs.",
         cta: "Discuss custom build",
         popular: false,
     },
@@ -112,6 +115,7 @@ export function PricingSection({ onContactClick }: PricingSectionProps) {
                                         </div>
                                         <h3 className="text-2xl text-white mb-2" style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}>{plan.name}</h3>
                                         <p className="text-slate-400 text-sm min-h-12" style={{ fontFamily: "var(--font-sans)", fontWeight: 300 }}>{plan.description}</p>
+                                        <p className="text-primary text-xs uppercase tracking-[0.18em] mt-3">{plan.outcomes}</p>
                                     </div>
 
                                     <div className="mb-8">
