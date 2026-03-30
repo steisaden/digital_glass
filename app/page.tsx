@@ -6,6 +6,7 @@ import { ImpactHero } from "@/components/ImpactHero";
 import { MetricsSection } from "@/components/MetricsSection";
 import { TheCollection } from "@/components/TheCollection";
 import { Infrastructure } from "@/components/Infrastructure";
+import { HowItWorks } from "@/components/HowItWorks";
 import { Testimonials } from "@/components/Testimonials";
 import { Footer } from "@/components/Footer";
 import { LoadingScreen } from "@/components/LoadingScreen";
@@ -17,13 +18,22 @@ import { ConsultationModal } from "@/components/ConsultationModal";
 export interface Project {
   title: string;
   category: string;
-  location: string;
+  industry: string;
   image: string;
-  value: string;
   description: string;
-  challenge?: string;
-  approach?: string;
+  problem: string;
+  solution: string;
+  results: string;
+  resultMetrics: string[];
+  cta: string;
+  previewVideo?: string;
   link?: string;
+  year?: string;
+  gallery?: Array<{
+    type: "image" | "video";
+    src: string;
+    alt: string;
+  }>;
 }
 
 export default function Home() {
@@ -34,23 +44,26 @@ export default function Home() {
     <>
       <LoadingScreen />
       <PaperShaderBackground />
-      <div className="min-h-screen bg-transparent text-white overflow-x-hidden relative z-10" style={{ fontFamily: 'var(--font-sans)' }}>
+      <div
+        className="min-h-screen bg-transparent text-white overflow-x-hidden relative z-10"
+        style={{ fontFamily: "var(--font-sans)" }}
+      >
         <Navigation onContactClick={() => setIsContactOpen(true)} />
         <main className="w-full">
-          <ImpactHero />
+          <ImpactHero onContactClick={() => setIsContactOpen(true)} />
           <MetricsSection />
+          <Infrastructure onContactClick={() => setIsContactOpen(true)} />
+          <HowItWorks onContactClick={() => setIsContactOpen(true)} />
           <TheCollection
             onProjectSelect={setSelectedProject}
             onContactClick={() => setIsContactOpen(true)}
           />
-          <Infrastructure />
-          <PricingSection />
-          <Testimonials />
+          <PricingSection onContactClick={() => setIsContactOpen(true)} />
+          <Testimonials onContactClick={() => setIsContactOpen(true)} />
         </main>
         <Footer onContactClick={() => setIsContactOpen(true)} />
       </div>
 
-      {/* Modals */}
       <CaseStudyModal
         isOpen={!!selectedProject}
         onClose={() => setSelectedProject(null)}

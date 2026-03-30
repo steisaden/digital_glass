@@ -33,11 +33,9 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
-        // Simulate network request
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        await new Promise((resolve) => setTimeout(resolve, 1500));
         setIsSubmitting(false);
         setIsSuccess(true);
-        // Reset after showing success
         setTimeout(() => {
             setIsSuccess(false);
             onClose();
@@ -48,7 +46,6 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
         <AnimatePresence>
             {isOpen && (
                 <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-                    {/* Backdrop */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -57,7 +54,6 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
                         className="absolute inset-0 bg-[#0a0a0f]/80 backdrop-blur-md"
                     />
 
-                    {/* Modal Container */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -67,7 +63,6 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
                         onClick={(e) => e.stopPropagation()}
                     >
                         <GlassCard className="relative overflow-hidden border border-white/20 !bg-[#0a0a0f]/90 !p-10">
-                            {/* Close Button */}
                             <button
                                 onClick={onClose}
                                 className="absolute top-6 right-6 p-2 rounded-full text-slate-400 hover:text-white hover:bg-white/10 transition-colors"
@@ -80,16 +75,16 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
                                     <div className="w-16 h-16 rounded-full bg-green-500/20 text-green-500 flex items-center justify-center mb-6">
                                         <ArrowRight className="w-8 h-8 rotate-[-45deg]" />
                                     </div>
-                                    <h3 className="text-3xl font-serif font-bold text-white mb-2">Received</h3>
-                                    <p className="text-slate-400">We&apos;ll be in touch shortly.</p>
+                                    <h3 className="text-3xl font-serif font-bold text-white mb-2">Request received</h3>
+                                    <p className="text-slate-400">We&apos;ll review your goals and follow up shortly.</p>
                                 </div>
                             ) : (
                                 <>
                                     <div className="mb-10">
-                                        <p className="text-primary tracking-widest text-xs uppercase mb-3">Consultation</p>
-                                        <h2 className="text-4xl font-serif font-bold text-white mb-4">Let&apos;s talk.</h2>
+                                        <p className="text-primary tracking-widest text-xs uppercase mb-3">Get Started</p>
+                                        <h2 className="text-4xl font-serif font-bold text-white mb-4">Book a consultation.</h2>
                                         <p className="text-slate-400 font-light">
-                                            Tell us about your project. We usually respond within 24 hours.
+                                            Tell us where leads are leaking or where manual work is slowing your team down. We usually respond within 24 hours.
                                         </p>
                                     </div>
 
@@ -114,16 +109,16 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
                                             <select
                                                 className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-primary/50 focus:bg-white/[0.05] transition-all duration-300 appearance-none"
                                             >
-                                                <option className="bg-[#0a0a0f]">Project Type...</option>
-                                                <option className="bg-[#0a0a0f]">E-Commerce</option>
-                                                <option className="bg-[#0a0a0f]">Real Estate</option>
-                                                <option className="bg-[#0a0a0f]">Digital Product</option>
+                                                <option className="bg-[#0a0a0f]">What do you need?</option>
+                                                <option className="bg-[#0a0a0f]">Lead generation website</option>
+                                                <option className="bg-[#0a0a0f]">AI follow-up system</option>
+                                                <option className="bg-[#0a0a0f]">Custom automation build</option>
                                             </select>
                                         </div>
                                         <div className="space-y-2">
                                             <textarea
                                                 rows={4}
-                                                placeholder="Tell us a bit about your vision..."
+                                                placeholder="What is the biggest revenue or operations bottleneck right now?"
                                                 className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-5 py-4 text-white placeholder-slate-500 focus:outline-none focus:border-primary/50 focus:bg-white/[0.05] transition-all duration-300 resize-none"
                                             />
                                         </div>
