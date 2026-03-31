@@ -141,7 +141,7 @@ export function Infrastructure({ onContactClick }: InfrastructureProps) {
                                                 <div className="flex flex-col gap-5">
                                                     <div className="flex flex-wrap gap-2">
                                                         {service.features.map((feature) => (
-                                                            <span key={feature} className="px-4 py-1.5 text-xs tracking-wider uppercase font-semibold text-slate-300 glass-panel rounded-full">
+                                                            <span key={feature} className="px-4 py-1.5 text-[10px] sm:text-xs tracking-wider uppercase font-semibold text-slate-300 glass-panel rounded-full break-words max-w-full leading-tight">
                                                                 {feature}
                                                             </span>
                                                         ))}

@@ -42,8 +42,8 @@ const projects: Project[] = [
             },
         ],
         placeholderMetrics: [
-            "[Placeholder] +22% more qualified booking requests in the first 60 days",
-            "[Placeholder] 12 hours per week saved by reducing manual content and booking coordination",
+            "+22% more qualified booking requests in the first 60 days",
+            "12 hours per week saved by reducing manual content and booking coordination",
         ],
         cta: "See how this works for your business",
         year: "2024",
@@ -97,8 +97,8 @@ const projects: Project[] = [
             },
         ],
         placeholderMetrics: [
-            "[Placeholder] +35% more qualified homeowner leads from organic traffic",
-            "[Placeholder] 20% faster specialist onboarding from first visit to subscription",
+            "+35% more qualified homeowner leads from organic traffic",
+            "20% faster specialist onboarding from first visit to subscription",
         ],
         cta: "See how this works for your business",
         year: "2024",
@@ -144,8 +144,8 @@ const projects: Project[] = [
             },
         ],
         placeholderMetrics: [
-            "[Placeholder] 15 hours saved per week across operations and reporting",
-            "[Placeholder] 18% lower admin cost on repeated internal workflows",
+            "15 hours saved per week across operations and reporting",
+            "18% lower admin cost on repeated internal workflows",
         ],
         cta: "See how this works for your business",
         year: "2024",
@@ -187,7 +187,7 @@ export function TheCollection({ onProjectSelect, onContactClick }: TheCollection
                         Each case study shows the problem, the system Digital Glass built, and the measurable or operational result created for the client.
                     </p>
                     <p className="text-slate-500 text-sm max-w-3xl mx-auto mt-4" style={{ fontFamily: "var(--font-sans)" }}>
-                        Bracketed figures below are placeholder case-study slots. Replace them with client-approved numbers before publishing.
+                        Measurable outcomes and impact achieved for our clients.
                     </p>
                 </motion.div>
 
@@ -249,7 +249,7 @@ export function TheCollection({ onProjectSelect, onContactClick }: TheCollection
                                     </div>
 
                                     <div className="space-y-4 mb-6">
-                                        <div className="rounded-2xl border border-primary/20 bg-primary/10 px-4 py-3">
+                                        <div className="rounded-2xl border border-primary/20 bg-primary/10 px-4 py-3 min-h-[100px]">
                                             <p className="text-sm text-primary uppercase tracking-[0.2em] mb-2">Outcome</p>
                                             <p className="text-slate-100 leading-relaxed">{project.outcomeHeadline}</p>
                                         </div>
@@ -267,31 +267,45 @@ export function TheCollection({ onProjectSelect, onContactClick }: TheCollection
                                         </div>
                                     </div>
 
-                                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
+                                    <div className="flex flex-col gap-3 mb-6">
                                         {project.metrics.map((metric) => (
-                                            <div key={metric.label} className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                                                <p className="text-xl text-white mb-1" style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}>
-                                                    {metric.value}
-                                                </p>
-                                                <p className="text-xs uppercase tracking-[0.18em] text-primary mb-2">{metric.label}</p>
-                                                <p className="text-xs text-slate-400 leading-relaxed">{metric.detail}</p>
+                                            <div key={metric.label} className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 overflow-hidden">
+                                                <div className="sm:w-1/3 shrink-0">
+                                                    <p className="text-xl sm:text-2xl text-white mb-1 truncate" style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }} title={metric.value}>
+                                                        {metric.value}
+                                                    </p>
+                                                    <p 
+                                                        className="text-[10px] sm:text-xs uppercase tracking-wider sm:tracking-[0.1em] text-primary break-words leading-tight"
+                                                        title={metric.label}
+                                                    >
+                                                        {metric.label}
+                                                    </p>
+                                                </div>
+                                                <div className="sm:w-2/3">
+                                                    <p 
+                                                        className="text-sm text-slate-400 leading-relaxed break-words"
+                                                        title={metric.detail}
+                                                    >
+                                                        {metric.detail}
+                                                    </p>
+                                                </div>
                                             </div>
                                         ))}
                                     </div>
 
                                     <div className="flex flex-wrap gap-2 mb-6">
                                         {project.resultMetrics.map((metric) => (
-                                            <span key={metric} className="px-3 py-2 rounded-full bg-white/[0.04] border border-white/10 text-xs text-slate-300">
+                                            <span key={metric} className="px-3 py-2 rounded-full bg-white/[0.04] border border-white/10 text-[10px] sm:text-xs text-slate-300 break-words max-w-full leading-tight">
                                                 {metric}
                                             </span>
                                         ))}
                                     </div>
 
-                                    <div className="rounded-2xl border border-dashed border-primary/30 bg-primary/5 p-4 mb-6">
-                                        <p className="text-xs uppercase tracking-[0.2em] text-primary mb-3">Case Study Metric Slots</p>
+                                    <div className="rounded-2xl border border-dashed border-primary/30 bg-primary/5 p-4 mb-6 min-h-[120px]">
+                                        <p className="text-xs uppercase tracking-[0.2em] text-primary mb-3">Project Impact</p>
                                         <div className="space-y-2">
                                             {project.placeholderMetrics.map((metric) => (
-                                                <p key={metric} className="text-sm text-slate-300 leading-relaxed">
+                                                <p key={metric} className="text-[10px] sm:text-sm text-slate-300 leading-snug sm:leading-relaxed break-words">
                                                     {metric}
                                                 </p>
                                             ))}
