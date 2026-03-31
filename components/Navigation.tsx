@@ -112,7 +112,7 @@ export function Navigation({ onContactClick }: NavigationProps) {
                             exit={{ opacity: 0, height: 0, marginTop: 0 }}
                             className="md:hidden overflow-hidden"
                         >
-                            <div className="flex flex-col gap-2 p-4 glass-panel rounded-2xl bg-black/40">
+                            <div className="flex flex-col gap-2 p-4 glass-panel rounded-2xl bg-[#08080c]/95 border border-white/10 shadow-2xl backdrop-blur-xl">
                                 {navItems.map((item) => (
                                     <a
                                         key={item.label}
