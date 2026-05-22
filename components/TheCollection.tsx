@@ -41,7 +41,7 @@ const projects: Project[] = [
                 detail: "Key interactions were tuned for fast, fluid usage across the storefront.",
             },
         ],
-        placeholderMetrics: [
+        impactMetrics: [
             "+22% more qualified booking requests in the first 60 days",
             "12 hours per week saved by reducing manual content and booking coordination",
         ],
@@ -96,7 +96,7 @@ const projects: Project[] = [
                 detail: "Subscription onboarding reduces friction for provider acquisition.",
             },
         ],
-        placeholderMetrics: [
+        impactMetrics: [
             "+35% more qualified homeowner leads from organic traffic",
             "20% faster specialist onboarding from first visit to subscription",
         ],
@@ -143,7 +143,7 @@ const projects: Project[] = [
                 detail: "Teams can act without waiting on scattered systems or reports.",
             },
         ],
-        placeholderMetrics: [
+        impactMetrics: [
             "15 hours saved per week across operations and reporting",
             "18% lower admin cost on repeated internal workflows",
         ],
@@ -304,7 +304,7 @@ export function TheCollection({ onProjectSelect, onContactClick }: TheCollection
                                     <div className="rounded-2xl border border-dashed border-primary/30 bg-primary/5 p-4 mb-6 min-h-[120px]">
                                         <p className="text-xs uppercase tracking-[0.2em] text-primary mb-3">Project Impact</p>
                                         <div className="space-y-2">
-                                            {project.placeholderMetrics.map((metric) => (
+                                            {project.impactMetrics.map((metric) => (
                                                 <p key={metric} className="text-[10px] sm:text-sm text-slate-300 leading-snug sm:leading-relaxed break-words">
                                                     {metric}
                                                 </p>
