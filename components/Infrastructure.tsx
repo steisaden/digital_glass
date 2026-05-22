@@ -14,8 +14,8 @@ const services = [
             "Designed CTA paths that move visitors toward booked calls or forms",
         ],
         proofExamples: [
-            "[Placeholder] +30% to +45% more qualified leads in the first 90 days",
-            "[Placeholder] +15% to +25% conversion rate lift on core landing pages",
+            "+30% to +45% more qualified leads in the first 90 days",
+            "+15% to +25% conversion rate lift on core landing pages",
         ],
         colSpan: "md:col-span-7",
         glow: "hover:shadow-[0_0_40px_rgba(255,157,0,0.15)] group-hover:border-[#ff9d00]/40",
@@ -32,8 +32,8 @@ const services = [
             "Supports cleaner handoffs into CRM or operator workflows",
         ],
         proofExamples: [
-            "[Placeholder] 30% less lead loss after first contact",
-            "[Placeholder] Sales response time reduced from hours to minutes",
+            "30% less lead loss after first contact",
+            "Sales response time reduced from hours to minutes",
         ],
         colSpan: "md:col-span-5",
         glow: "hover:shadow-[0_0_40px_rgba(190,174,96,0.15)] group-hover:border-[#beae60]/40",
@@ -50,8 +50,8 @@ const services = [
             "Improves execution speed across admin-heavy processes",
         ],
         proofExamples: [
-            "[Placeholder] 10 to 20 hours saved per week in manual admin",
-            "[Placeholder] 15% to 25% lower operating overhead on repeated workflows",
+            "10 to 20 hours saved per week in manual admin",
+            "15% to 25% lower operating overhead on repeated workflows",
         ],
         colSpan: "md:col-span-12",
         glow: "hover:shadow-[0_0_40px_rgba(215,203,198,0.15)] group-hover:border-[#d7cbc6]/40",
