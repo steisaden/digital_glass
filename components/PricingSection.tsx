@@ -5,8 +5,8 @@ import { GlassCard } from "./GlassCard";
 const plans = [
     {
         name: "Lead Generation System",
-        price: "$5,000",
-        description: "Starting at $5,000 for high-converting websites built to generate more qualified leads.",
+        price: "$799",
+        description: "Starting at $799 for high-converting websites built to generate more qualified leads.",
         icon: LayoutTemplate,
         color: "#ff9d00",
         features: [
@@ -22,8 +22,8 @@ const plans = [
     },
     {
         name: "AI Follow-Up System",
-        price: "$10,000",
-        description: "Starting at $10,000 for automated lead nurturing that improves response time and engagement.",
+        price: "$1,500",
+        description: "Starting at $1,500 for automated lead nurturing that improves response time and engagement.",
         icon: Bot,
         color: "#beae60",
         features: [
