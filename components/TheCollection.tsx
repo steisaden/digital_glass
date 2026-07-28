@@ -4,10 +4,10 @@ import React from "react";
 import NextImage from "next/image";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
-import { Project } from "@/app/page";
+import type { Project } from "@/app/page";
 import { GlassCard } from "./GlassCard";
 
-const projects: Project[] = [
+export const caseStudies: Project[] = [
     {
         title: "Goddess Care Co",
         category: "E-Commerce Automation",
@@ -184,7 +184,7 @@ export function TheCollection({ onProjectSelect, onContactClick }: TheCollection
                         Real-world builds framed around business outcomes
                     </h2>
                     <p className="text-slate-400 text-lg md:text-xl max-w-3xl mx-auto" style={{ fontFamily: "var(--font-sans)", fontWeight: 300 }}>
-                        Each case study shows the problem, the system Digital Glass built, and the measurable or operational result created for the client.
+                        Each case study shows the problem, the system Stephen.Tech built, and the measurable or operational result created for the client.
                     </p>
                     <p className="text-slate-500 text-sm max-w-3xl mx-auto mt-4" style={{ fontFamily: "var(--font-sans)" }}>
                         Measurable outcomes and impact achieved for our clients.
@@ -192,7 +192,7 @@ export function TheCollection({ onProjectSelect, onContactClick }: TheCollection
                 </motion.div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    {projects.map((project, index) => (
+                    {caseStudies.map((project, index) => (
                         <motion.div
                             key={project.title}
                             initial={{ opacity: 0, y: 40 }}
@@ -299,17 +299,6 @@ export function TheCollection({ onProjectSelect, onContactClick }: TheCollection
                                                 {metric}
                                             </span>
                                         ))}
-                                    </div>
-
-                                    <div className="rounded-2xl border border-dashed border-primary/30 bg-primary/5 p-4 mb-6 min-h-[120px]">
-                                        <p className="text-xs uppercase tracking-[0.2em] text-primary mb-3">Project Impact</p>
-                                        <div className="space-y-2">
-                                            {project.placeholderMetrics.map((metric) => (
-                                                <p key={metric} className="text-[10px] sm:text-sm text-slate-300 leading-snug sm:leading-relaxed break-words">
-                                                    {metric}
-                                                </p>
-                                            ))}
-                                        </div>
                                     </div>
 
                                     <button

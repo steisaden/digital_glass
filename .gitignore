@@ -9,6 +9,7 @@
 /coverage
 
 # next.js
+/.next
 /.next/
 /out/
 
@@ -17,10 +18,16 @@
 
 # misc
 .DS_Store
+._*
 *.pem
 *.json
 !package.json
 !tsconfig.json
+!.impeccable/
+!.impeccable/design.json
+
+# local design review artifacts
+/.artifacts/
 
 # debug
 npm-debug.log*

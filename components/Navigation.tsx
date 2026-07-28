@@ -11,37 +11,60 @@ export function Navigation({ onContactClick }: NavigationProps) {
     const [isVisible, setIsVisible] = useState(true);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const lastScrollY = useRef(0);
+    const scrollFrame = useRef<number | null>(null);
+    const visibleRef = useRef(true);
+    const scrolledRef = useRef(false);
 
     useEffect(() => {
         const handleScroll = () => {
-            const currentScrollY = window.scrollY;
-            setIsScrolled(currentScrollY > 50);
+            if (scrollFrame.current !== null) return;
 
-            if (currentScrollY < 50) {
-                setIsVisible(true);
-            } else if (currentScrollY < lastScrollY.current) {
-                setIsVisible(true);
-            } else if (currentScrollY > lastScrollY.current + 5) {
-                setIsVisible(false);
-                setIsMobileMenuOpen(false);
-            }
+            scrollFrame.current = window.requestAnimationFrame(() => {
+                const currentScrollY = window.scrollY;
+                const nextScrolled = currentScrollY > 50;
+                const nextVisible =
+                    currentScrollY < 50 || currentScrollY < lastScrollY.current
+                        ? true
+                        : currentScrollY > lastScrollY.current + 5
+                          ? false
+                          : visibleRef.current;
 
-            lastScrollY.current = currentScrollY;
+                if (nextScrolled !== scrolledRef.current) {
+                    scrolledRef.current = nextScrolled;
+                    setIsScrolled(nextScrolled);
+                }
+
+                if (nextVisible !== visibleRef.current) {
+                    visibleRef.current = nextVisible;
+                    setIsVisible(nextVisible);
+                    if (!nextVisible) {
+                        setIsMobileMenuOpen(false);
+                    }
+                }
+
+                lastScrollY.current = currentScrollY;
+                scrollFrame.current = null;
+            });
         };
 
         window.addEventListener("scroll", handleScroll, { passive: true });
-        return () => window.removeEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+            if (scrollFrame.current !== null) {
+                window.cancelAnimationFrame(scrollFrame.current);
+            }
+        };
     }, []);
 
     const navItems = [
+        { label: "Selected work", href: "#work" },
         { label: "What we build", href: "#what-we-build" },
         { label: "How it works", href: "#how-it-works" },
-        { label: "Client results", href: "#client-results" },
     ];
 
     return (
         <motion.nav
-            initial={{ y: -100 }}
+            initial={false}
             animate={{ y: 0 }}
             transition={{ duration: 0.8 }}
             className={`fixed top-0 left-0 right-0 z-50 flex justify-center pt-6 transition-all duration-500 ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
@@ -62,8 +85,8 @@ export function Navigation({ onContactClick }: NavigationProps) {
                             fontWeight: 700,
                         }}
                     >
-                        <span className="text-primary">Digital</span>
-                        <span className="text-white">Glass</span>
+                        <span className="text-white">Stephen</span>
+                        <span className="text-primary">.Tech</span>
                     </motion.a>
 
                     <div className="hidden md:flex items-center gap-8 bg-black/20 rounded-full px-6 py-2 border border-white/10">
@@ -94,6 +117,9 @@ export function Navigation({ onContactClick }: NavigationProps) {
 
                     <button
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        aria-label={isMobileMenuOpen ? "Close navigation" : "Open navigation"}
+                        aria-expanded={isMobileMenuOpen}
+                        aria-controls="mobile-navigation"
                         className="md:hidden w-10 h-10 rounded-full glass-panel flex items-center justify-center transition-transform hover:scale-105"
                     >
                         {isMobileMenuOpen ? (
@@ -112,7 +138,7 @@ export function Navigation({ onContactClick }: NavigationProps) {
                             exit={{ opacity: 0, height: 0, marginTop: 0 }}
                             className="md:hidden overflow-hidden"
                         >
-                            <div className="flex flex-col gap-2 p-4 glass-panel rounded-2xl bg-[#08080c]/95 border border-white/10 shadow-2xl backdrop-blur-xl">
+                            <div id="mobile-navigation" className="flex flex-col gap-2 p-4 glass-panel rounded-2xl bg-[#08080c]/95 border border-white/10 shadow-2xl backdrop-blur-xl">
                                 {navItems.map((item) => (
                                     <a
                                         key={item.label}

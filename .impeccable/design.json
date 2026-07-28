@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-27T20:45:37+07:00",
+  "title": "Design System: Stephen.Tech",
+  "extensions": {
+    "colorMeta": {
+      "ember": {
+        "role": "primary",
+        "displayName": "Ember",
+        "canonical": "#ff9d00",
+        "tonalRamp": ["#2b1700", "#5e3300", "#915000", "#c56e00", "#ff9d00", "#ffb94d", "#ffd699", "#fff1dd"]
+      },
+      "studio-ink": {
+        "role": "neutral",
+        "displayName": "Studio Ink",
+        "canonical": "#0D0E15",
+        "tonalRamp": ["#090a0f", "#13151f", "#242735", "#3d4153", "#5e6378", "#8b90a1", "#c3c6d0", "#f2f3f6"]
+      },
+      "pearl": {
+        "role": "neutral",
+        "displayName": "Pearl",
+        "canonical": "#ffffff",
+        "tonalRamp": ["#262626", "#4d4d4d", "#737373", "#999999", "#bfbfbf", "#d9d9d9", "#eeeeee", "#ffffff"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "One concise statement or project title per viewport."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Project context, proof, and service explanations."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Categories, indices, statuses, and compact controls."
+      }
+    },
+    "shadows": [
+      {
+        "name": "ambient-glass",
+        "value": "0 24px 80px rgba(0, 0, 0, 0.34)",
+        "purpose": "Dominant showcase glass over shader or media."
+      },
+      {
+        "name": "edge-light",
+        "value": "inset 0 1px 0 rgba(255, 255, 255, 0.16)",
+        "purpose": "Optical top edge on translucent surfaces."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-material",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Project selection, stage changes, and major reveals."
+      },
+      {
+        "name": "ease-control",
+        "value": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+        "purpose": "Buttons, chips, navigation, and focus transitions."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "xl",
+        "value": "1280px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single dominant action in a viewport.",
+      "html": "<button class=\"ds-primary\">VIEW LIVE WORK <span aria-hidden=\"true\">↗</span></button>",
+      "css": ".ds-primary { border: 0; border-radius: 999px; background: #ff9d00; color: #0a0a0f; padding: 14px 22px; font: 600 12px/1 Geist, Arial, sans-serif; letter-spacing: .14em; transition: transform .24s cubic-bezier(.2,.8,.2,1), background .24s; } .ds-primary:hover { background: #ffb43d; transform: translateY(-2px); } .ds-primary:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }"
+    },
+    {
+      "name": "Secondary Action",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "A quieter translucent action for supporting paths.",
+      "html": "<button class=\"ds-secondary\">BOOK A CONSULTATION</button>",
+      "css": ".ds-secondary { border: 1px solid rgba(255,255,255,.16); border-radius: 999px; background: rgba(255,255,255,.06); color: #fff; padding: 14px 22px; backdrop-filter: blur(20px); font: 600 12px/1 Geist, Arial, sans-serif; letter-spacing: .14em; transition: background .24s, border-color .24s; } .ds-secondary:hover { background: rgba(255,255,255,.13); border-color: rgba(255,255,255,.28); } .ds-secondary:focus-visible { outline: 2px solid #ff9d00; outline-offset: 3px; }"
+    },
+    {
+      "name": "Project Chip",
+      "kind": "chip",
+      "description": "Compact category or project selector.",
+      "html": "<button class=\"ds-chip\" aria-pressed=\"true\"><span>01</span> INTERIOR</button>",
+      "css": ".ds-chip { display: inline-flex; gap: 10px; align-items: center; border: 1px solid rgba(255,157,0,.56); border-radius: 999px; background: rgba(255,255,255,.06); color: #fff; padding: 10px 14px; font: 600 11px/1 Geist, Arial, sans-serif; letter-spacing: .12em; } .ds-chip span { color: #ff9d00; } .ds-chip:hover { background: rgba(255,255,255,.12); } .ds-chip:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }"
+    },
+    {
+      "name": "Showcase Glass",
+      "kind": "card",
+      "refersTo": "glass-card",
+      "description": "The dominant optical plane around selected work.",
+      "html": "<article class=\"ds-showcase\"><p>SELECTED WORK / 01</p><h3>Unquiet Walls</h3><span>Interior design portfolio demo</span></article>",
+      "css": ".ds-showcase { min-height: 240px; border: 1px solid rgba(255,255,255,.16); border-radius: 36px; background: linear-gradient(135deg,rgba(255,255,255,.13),rgba(255,255,255,.035)); color: #fff; padding: 32px; backdrop-filter: blur(30px) saturate(140%); box-shadow: 0 24px 80px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.16); } .ds-showcase p { color: #ff9d00; font: 600 11px/1 Geist,Arial,sans-serif; letter-spacing: .14em; } .ds-showcase h3 { margin: 72px 0 8px; font: 700 40px/.95 Inter,Arial,sans-serif; letter-spacing: -.04em; } .ds-showcase span { color: rgba(255,255,255,.68); font: 400 14px/1.5 Geist,Arial,sans-serif; }"
+    },
+    {
+      "name": "Instrument Navigation",
+      "kind": "nav",
+      "description": "Slim persistent studio navigation.",
+      "html": "<nav class=\"ds-nav\"><strong>Stephen<span>.Tech</span></strong><a href=\"#\">WORK</a><a href=\"#\">SERVICES</a><button>LET'S TALK</button></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 24px; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; background: rgba(13,14,21,.58); color: #fff; padding: 10px 12px 10px 18px; backdrop-filter: blur(24px); font-family: Geist,Arial,sans-serif; } .ds-nav strong { margin-right: auto; font: 700 18px/1 Inter,Arial,sans-serif; } .ds-nav strong span { color: #ff9d00; } .ds-nav a { color: rgba(255,255,255,.72); text-decoration: none; font-size: 11px; letter-spacing: .12em; } .ds-nav a:hover { color: #fff; } .ds-nav button { border: 0; border-radius: 14px; background: #ff9d00; color: #0a0a0f; padding: 11px 14px; font: 600 11px/1 Geist,Arial,sans-serif; letter-spacing: .1em; } .ds-nav a:focus-visible,.ds-nav button:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Proof Under Glass",
+    "overview": "Stephen.Tech treats finished work as the atmosphere, not as content placed below a sales pitch. Projects sit under optically layered glass while the shader behaves like slow studio light moving across the surface. Glass is functional: it groups controls, creates depth over moving media, and keeps type legible.",
+    "keyCharacteristics": [
+      "Work occupies the largest surfaces.",
+      "Thin luminous edges define depth more than heavy shadows.",
+      "Ember is a directional signal, not a decorative wash.",
+      "Inter carries decisive display statements; Geist carries navigation, metadata, and body copy.",
+      "Motion reveals relationships between projects and systems."
+    ],
+    "rules": [
+      {
+        "name": "The Ember Compass Rule",
+        "body": "Ember indicates where to look or act next. It does not decorate every element.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Lens Rule",
+        "body": "A viewport gets one dominant glass plane.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do let real project imagery or motion dominate the first viewport.",
+      "Do use glass to preserve legibility over the shader and media.",
+      "Do vary section density and composition while preserving the same material grammar."
+    ],
+    "donts": [
+      "Don't stack identical centered heading-and-card sections down the page.",
+      "Don't block the first visit with a timed loading screen.",
+      "Don't fabricate testimonials, metrics, form success, or production behavior."
+    ]
+  }
+}

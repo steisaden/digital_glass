@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 interface GlassCardProps {
     children: React.ReactNode;
@@ -9,52 +9,49 @@ interface GlassCardProps {
 
 export const GlassCard = ({ children, className = '', interactive = false }: GlassCardProps) => {
     const divRef = useRef<HTMLDivElement>(null);
-    const [isFocused, setIsFocused] = useState(false);
-    const [position, setPosition] = useState({ x: 0, y: 0 });
-    const [opacity, setOpacity] = useState(0);
+    const boundsRef = useRef<DOMRect | null>(null);
+    const pointerRef = useRef({ x: 0, y: 0 });
+    const frameRef = useRef<number | null>(null);
 
     const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!divRef.current || isFocused) return;
+        if (!divRef.current) return;
+        const rect = boundsRef.current ?? divRef.current.getBoundingClientRect();
+        boundsRef.current = rect;
+        pointerRef.current = {
+            x: e.clientX - rect.left,
+            y: e.clientY - rect.top,
+        };
 
-        const div = divRef.current;
-        const rect = div.getBoundingClientRect();
-
-        setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+        if (frameRef.current !== null) return;
+        frameRef.current = window.requestAnimationFrame(() => {
+            divRef.current?.style.setProperty('--spot-x', `${pointerRef.current.x}px`);
+            divRef.current?.style.setProperty('--spot-y', `${pointerRef.current.y}px`);
+            frameRef.current = null;
+        });
     };
 
-    const handleFocus = () => {
-        setIsFocused(true);
-        setOpacity(1);
-    };
-
-    const handleBlur = () => {
-        setIsFocused(false);
-        setOpacity(0);
-    };
-
-    const handleMouseEnter = () => {
-        setOpacity(1);
-    };
-
-    const handleMouseLeave = () => {
-        setOpacity(0);
-    };
+    useEffect(() => () => {
+        if (frameRef.current !== null) {
+            window.cancelAnimationFrame(frameRef.current);
+        }
+    }, []);
 
     return (
         <div
             ref={divRef}
             onMouseMove={handleMouseMove}
-            onFocus={handleFocus}
-            onBlur={handleBlur}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            className={`relative overflow-hidden glass-panel rounded-[2rem] p-8 md:p-12 transition-transform duration-500 ${interactive ? 'glass-card-hover cursor-none hover:scale-[1.02]' : ''} ${className}`}
+            onMouseEnter={() => {
+                boundsRef.current = divRef.current?.getBoundingClientRect() ?? null;
+            }}
+            onMouseLeave={() => {
+                boundsRef.current = null;
+            }}
+            className={`group relative overflow-hidden glass-panel rounded-[2rem] p-8 md:p-12 transition-transform duration-500 ${interactive ? 'glass-card-hover hover:scale-[1.01]' : ''} ${className}`}
         >
             <div
-                className="pointer-events-none absolute -inset-px opacity-0 transition duration-300 rounded-[2rem]"
+                className="pointer-events-none absolute -inset-px rounded-[2rem] opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-within:opacity-100"
                 style={{
-                    opacity,
-                    background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(255,255,255,.15), transparent 40%)`,
+                    background: 'radial-gradient(600px circle at var(--spot-x, 50%) var(--spot-y, 50%), rgba(255,255,255,.12), transparent 40%)',
                 }}
             />
             {/* Content */}

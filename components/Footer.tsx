@@ -1,59 +1,29 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { motion } from "motion/react";
 import { Mail, Phone, MapPin, Linkedin, Twitter, Github, ArrowUpRight } from "lucide-react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 interface FooterProps {
     onContactClick?: () => void;
 }
 
 export function Footer({ onContactClick }: FooterProps) {
-    const footerRef = useRef<HTMLElement>(null);
-    const contentRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        if (typeof window !== "undefined") {
-            gsap.registerPlugin(ScrollTrigger);
-
-            const ctx = gsap.context(() => {
-                gsap.fromTo(
-                    contentRef.current,
-                    { y: 100, opacity: 0 },
-                    {
-                        y: 0,
-                        opacity: 1,
-                        duration: 1,
-                        ease: "power2.out",
-                        scrollTrigger: {
-                            trigger: footerRef.current,
-                            start: "top 85%",
-                            end: "bottom bottom",
-                            toggleActions: "play none none reverse",
-                        },
-                    }
-                );
-            });
-
-            return () => ctx.revert();
-        }
-    }, []);
-
     return (
-        <footer ref={footerRef} className="relative z-10 bg-transparent pt-16 md:pt-32 pb-12 border-t border-white/5">
+        <footer className="relative z-10 bg-transparent pt-16 md:pt-32 pb-12 border-t border-white/5">
             <div className="absolute inset-0 z-0 opacity-20 bg-[radial-gradient(circle_at_bottom_center,_var(--tw-gradient-stops))] from-primary/30 via-[#0D0E15] to-[#0D0E15]" />
 
-            <div ref={contentRef} className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center">
+            <motion.div
+                initial={{ opacity: 0.86, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.08 }}
+                transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center"
+            >
                 <div className="w-full max-w-5xl md:px-16 md:py-24 py-12 px-4 sm:px-6 neumorphic-well rounded-[2.5rem] md:rounded-[3rem] text-center mb-16 md:mb-32 mt-12 md:mt-0 relative group overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
 
-                    <motion.div
-                        animate={{ opacity: [0.1, 0.3, 0.1], scale: [1, 1.2, 1] }}
-                        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                        className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#ff9d00_0%,_transparent_60%)] pointer-events-none mix-blend-screen"
-                    />
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#ff9d00_0%,_transparent_60%)] pointer-events-none mix-blend-screen opacity-20" />
 
                     <h3
                         className="text-3xl sm:text-4xl md:text-6xl mb-6 md:mb-8 text-white relative z-10"
@@ -85,8 +55,8 @@ export function Footer({ onContactClick }: FooterProps) {
 
                 <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 pt-16 border-t border-white/5">
                     <div>
-                        <h3 className="text-3xl mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#ff9d00] to-[#beae60] font-bold" style={{ fontFamily: "var(--font-heading)" }}>
-                            Digital Glass
+                        <h3 className="text-3xl mb-4 text-white font-bold" style={{ fontFamily: "var(--font-heading)" }}>
+                            Stephen<span className="text-primary">.Tech</span>
                         </h3>
                         <p className="text-slate-400 mb-8" style={{ fontFamily: "var(--font-sans)", fontWeight: 300 }}>
                             AI systems, conversion websites, and automation infrastructure for service businesses, operators, and e-commerce brands.
@@ -168,7 +138,7 @@ export function Footer({ onContactClick }: FooterProps) {
 
                 <div className="w-full pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-slate-500 text-sm" style={{ fontFamily: "var(--font-sans)" }}>
-                        © {new Date().getFullYear()} Digital Glass. All rights reserved.
+                        © {new Date().getFullYear()} Stephen.Tech. All rights reserved.
                     </p>
                     <div className="flex gap-8 text-sm">
                         <a href="#" className="text-slate-500 hover:text-white transition-colors duration-300 tracking-wide" style={{ fontFamily: "var(--font-sans)" }}>
@@ -179,7 +149,7 @@ export function Footer({ onContactClick }: FooterProps) {
                         </a>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </footer>
     );
 }

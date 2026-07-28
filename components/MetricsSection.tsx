@@ -11,9 +11,9 @@ const metrics = [
     },
     {
         icon: MousePointerClick,
-        value: "2",
-        label: "Detailed Build Case Studies",
-        description: "Commerce, booking, marketplace, and operational workflows",
+        value: "7",
+        label: "Selected Builds & Demos",
+        description: "Five design worlds plus two detailed system case studies",
     },
     {
         icon: Briefcase,

@@ -1,124 +1,145 @@
+import Image from "next/image";
 import { motion } from "motion/react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { demoProjects } from "@/components/concepts/projects";
 
 interface ImpactHeroProps {
     onContactClick: () => void;
 }
 
 export function ImpactHero({ onContactClick }: ImpactHeroProps) {
+    const featuredProject = demoProjects[0];
+
     return (
         <section className="relative min-h-screen w-full overflow-hidden">
-            <div className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-12 pt-28 pb-12">
+            <div className="relative flex min-h-screen items-center px-4 pb-8 pt-24 sm:px-6 md:px-12 md:pb-12 md:pt-28">
                 <motion.div
-                    initial={{ opacity: 0, y: 50 }}
+                    initial={false}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
-                    className="max-w-6xl w-full"
+                    className="mx-auto w-full max-w-[90rem]"
                 >
-                    <div className="relative backdrop-blur-2xl bg-white/[0.03] border border-white/10 rounded-3xl p-6 sm:p-8 md:p-16 shadow-2xl">
-                        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent rounded-3xl" />
+                    <div className="relative overflow-hidden rounded-[1.75rem] border border-white/12 bg-[#0a0a0f]/58 p-4 shadow-2xl backdrop-blur-2xl sm:p-6 lg:p-8">
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.07] via-transparent to-transparent" />
 
-                        <div className="relative z-10">
+                        <div className="relative z-10 grid items-center gap-6 lg:grid-cols-[0.82fr_1.18fr] lg:gap-10">
+                          <div className="px-2 py-2 sm:px-4 lg:px-6">
                             <motion.div
-                                initial={{ opacity: 0, y: 20 }}
+                                initial={false}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1, delay: 0.3 }}
                             >
-                                <p className="text-primary tracking-[0.2em] sm:tracking-[0.3em] uppercase text-xs sm:text-sm mb-4 sm:mb-6" style={{ fontFamily: "var(--font-sans)", fontWeight: 600 }}>
-                                    Revenue Systems For Growth-Focused Businesses
+                                <p className="mb-3 text-xs font-semibold tracking-[0.08em] text-primary sm:mb-5 sm:text-sm" style={{ fontFamily: "var(--font-sans)" }}>
+                                    Independent design, development, and automation
                                 </p>
                             </motion.div>
 
                             <motion.h1
-                                initial={{ opacity: 0, scale: 0.95 }}
+                                initial={false}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 1.2, delay: 0.5, type: "spring" }}
-                                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 md:mb-8"
+                                className="mb-4 max-w-[12ch] text-[2.65rem] sm:text-5xl md:mb-6 md:text-6xl lg:text-[4.65rem]"
                                 style={{
                                     fontFamily: "var(--font-heading)",
                                     fontWeight: 700,
-                                    lineHeight: 1.06,
-                                    letterSpacing: "-0.03em",
+                                    lineHeight: 0.98,
+                                    letterSpacing: "-0.04em",
                                 }}
                             >
                                 <motion.span
-                                    initial={{ opacity: 0, y: 30 }}
+                                    initial={false}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.8, delay: 0.6 }}
-                                    className="inline-block"
+                                    className="block"
                                 >
-                                    Lead generation websites, AI follow-up systems, and automation infrastructure
+                                    Distinct digital experiences.
                                 </motion.span>
-                                <br />
                                 <motion.span
-                                    initial={{ opacity: 0, y: 30 }}
+                                    initial={false}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.8, delay: 0.8 }}
-                                    className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#ff9d00] via-[#beae60] to-[#d7cbc6]"
+                                    className="mt-1 block text-primary sm:mt-2"
                                 >
-                                    that help service businesses and operators generate more leads and reduce manual work.
+                                    Built to do real work.
                                 </motion.span>
                             </motion.h1>
 
                             <motion.p
-                                initial={{ opacity: 0, y: 20 }}
+                                initial={false}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1, delay: 0.7 }}
-                                className="text-slate-300 text-lg md:text-2xl mb-8 md:mb-12 max-w-3xl leading-relaxed"
+                                className="mb-5 max-w-xl text-sm leading-6 text-slate-300 sm:text-base md:mb-7 md:text-lg md:leading-7"
                                 style={{ fontFamily: "var(--font-sans)", fontWeight: 300 }}
                             >
-                                Digital Glass helps service businesses, operators, and e-commerce brands generate more qualified leads, reduce lead loss after first contact, and remove repetitive work from the sales and operations team.
+                                Authored websites paired with the lead generation,
+                                AI follow-up, and automation systems behind them.
                             </motion.p>
 
                             <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 1, delay: 0.8 }}
-                                className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 md:mb-12"
-                            >
-                                {[
-                                    "Lead Engine Websites designed to capture more qualified leads.",
-                                    "AI Follow-Up Systems that engage prospects automatically and reduce lead loss.",
-                                    "Custom Automation that frees up your team by reducing manual workflows.",
-                                ].map((item) => (
-                                    <div key={item} className="glass-panel rounded-2xl px-5 py-4 text-sm text-slate-200">
-                                        {item}
-                                    </div>
-                                ))}
-                            </motion.div>
-
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
+                                initial={false}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1, delay: 0.9 }}
-                                className="flex flex-col sm:flex-row gap-4 sm:gap-6"
+                                className="flex flex-wrap gap-3 sm:gap-4"
                             >
                                 <button
-                                    onClick={() => {
-                                        const servicesSection = document.getElementById("what-we-build");
-                                        servicesSection?.scrollIntoView({ behavior: "smooth" });
-                                    }}
-                                    className="group relative px-8 sm:px-10 py-4 sm:py-5 bg-primary hover:bg-amber-400 text-[#0a0a0f] rounded-2xl transition-all duration-500 overflow-hidden"
+                                    onClick={() => document.getElementById("work")?.scrollIntoView({ behavior: "smooth" })}
+                                    className="group relative min-h-11 overflow-hidden rounded-full bg-primary px-5 py-3 text-[#0a0a0f] transition-all duration-500 hover:bg-amber-400 sm:px-6"
                                     style={{ fontFamily: "var(--font-sans)", fontWeight: 600 }}
                                 >
-                                    <span className="relative z-10 flex items-center gap-3 justify-center text-sm md:text-base">
-                                        Get Your AI System Now
+                                    <span className="relative z-10 flex items-center justify-center gap-2 text-xs tracking-[0.08em] sm:text-sm">
+                                        EXPLORE THE WORK
                                         <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform duration-500" />
                                     </span>
-                                    <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                 </button>
 
                                 <button
                                     onClick={onContactClick}
-                                    className="group px-8 sm:px-10 py-4 sm:py-5 glass-panel hover:bg-white/[0.1] text-white rounded-2xl transition-all duration-500"
+                                    className="group min-h-11 rounded-full border border-white/16 bg-white/[0.06] px-5 py-3 text-white transition-all duration-500 hover:bg-white/[0.1] sm:px-6"
                                     style={{ fontFamily: "var(--font-sans)", fontWeight: 600 }}
                                 >
-                                    <span className="flex items-center gap-3 justify-center text-sm md:text-base">
-                                        Book a Consultation
-                                        <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform duration-500" />
+                                    <span className="flex items-center justify-center gap-2 text-xs tracking-[0.08em] sm:text-sm">
+                                        BOOK A CONSULTATION
                                     </span>
                                 </button>
                             </motion.div>
+                          </div>
+
+                          <motion.a
+                            href={featuredProject.url}
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label={`View ${featuredProject.title} live website`}
+                            initial={false}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                            className="group relative min-h-[13.5rem] overflow-hidden rounded-2xl border border-white/14 bg-[#0D0E15] sm:min-h-[20rem] lg:min-h-[34rem]"
+                          >
+                            <Image
+                              src={featuredProject.image}
+                              alt={`${featuredProject.title} website preview`}
+                              fill
+                              priority
+                              sizes="(max-width: 1024px) 100vw, 58vw"
+                              className="object-cover transition duration-700 ease-out group-hover:scale-[1.025]"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#08090d] via-transparent to-black/10" />
+                            <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-5 p-5 sm:p-7">
+                              <div>
+                                <p className="mb-2 text-[0.65rem] font-semibold tracking-[0.14em] text-primary">
+                                  FEATURED LIVE WORK
+                                </p>
+                                <h2 className="text-2xl font-semibold tracking-[-0.04em] text-white sm:text-4xl">
+                                  {featuredProject.title}
+                                </h2>
+                                <p className="mt-1 text-xs text-white/64 sm:text-sm">
+                                  {featuredProject.category}
+                                </p>
+                              </div>
+                              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary text-[#0a0a0f] transition group-hover:-translate-y-1 sm:h-12 sm:w-12">
+                                <ArrowUpRight className="h-5 w-5" aria-hidden="true" />
+                              </span>
+                            </div>
+                          </motion.a>
                         </div>
                     </div>
                 </motion.div>

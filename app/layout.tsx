@@ -1,24 +1,25 @@
 import type { Metadata } from "next";
-import { Inter, Geist } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
-import CustomCursor from "@/components/CustomCursor";
-import SmoothScroll from "@/components/SmoothScroll";
 
-const inter = Inter({
+const inter = localFont({
+  src: "../public/fonts/inter-latin-variable.woff2",
   variable: "--font-inter",
-  subsets: ["latin"],
-  display: 'swap',
+  display: "swap",
+  weight: "100 900",
 });
 
-const geist = Geist({
+const geist = localFont({
+  src: "../public/fonts/geist-latin-variable.woff2",
   variable: "--font-geist",
-  subsets: ["latin"],
-  display: 'swap',
+  display: "swap",
+  weight: "100 900",
 });
 
 export const metadata: Metadata = {
-  title: "Digital Asset Portfolio",
-  description: "A luxury digital sales center.",
+  title: "Stephen.Tech | Design, Development & Automation",
+  description:
+    "A hybrid studio portfolio for distinct websites, AI follow-up systems, and custom automation.",
 };
 
 export default function RootLayout({
@@ -31,10 +32,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${geist.variable} font-sans antialiased bg-slate-950 text-white`}
       >
-        <SmoothScroll>
-          <CustomCursor />
-          {children}
-        </SmoothScroll>
+        {children}
       </body>
     </html>
   );

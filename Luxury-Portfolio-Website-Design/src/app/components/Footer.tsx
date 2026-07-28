@@ -15,7 +15,7 @@ export function Footer() {
                 fontWeight: 700
               }}
             >
-              Digital Glass
+              Stephen.Tech
             </h3>
             <p className="text-slate-400 mb-6" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 300 }}>
               Crafting immersive digital experiences for luxury brands and high-value assets.
@@ -73,7 +73,7 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-slate-400" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 300 }}>
                 <Mail className="w-5 h-5 mt-0.5 flex-shrink-0 text-amber-500" />
-                <span>hello@digitalglass.com</span>
+                <span>stephen.tech139@gmail.com</span>
               </li>
               <li className="flex items-start gap-3 text-slate-400" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 300 }}>
                 <Phone className="w-5 h-5 mt-0.5 flex-shrink-0 text-amber-500" />
@@ -90,7 +90,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-slate-500 text-sm" style={{ fontFamily: 'Inter, sans-serif' }}>
-            © 2025 Digital Glass. All rights reserved.
+            © 2025 Stephen.Tech. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
             <a href="#" className="text-slate-500 hover:text-amber-500 transition-colors duration-300" style={{ fontFamily: 'Inter, sans-serif' }}>

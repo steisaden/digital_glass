@@ -3,7 +3,7 @@ import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    quote: "Digital Glass transformed our vision into an immersive digital experience that exceeded all expectations. The attention to detail and technical excellence is unmatched.",
+    quote: "Stephen.Tech transformed our vision into an immersive digital experience that exceeded all expectations. The attention to detail and technical excellence is unmatched.",
     author: "Sarah Chen",
     role: "VP of Digital Strategy",
     company: "Metropolitan Towers",

@@ -50,8 +50,8 @@ export function LoadingScreen() {
                             fontWeight: 700
                         }}
                     >
-                        <span className="text-primary">Digital</span>
-                        <span className="text-white">Glass</span>
+                        <span className="text-white">Stephen</span>
+                        <span className="text-primary">.Tech</span>
                     </h1>
 
                     {/* Loading Bar */}
