@@ -15,6 +15,7 @@ import { useEffect, useRef, useState } from "react";
 import type { Project } from "@/app/page";
 import { ConsultationModal } from "@/components/ConsultationModal";
 import { DiaTextReveal } from "@/components/DiaTextReveal";
+import { HeroPortfolioComposition } from "@/components/HeroPortfolioComposition";
 import { PaperShaderBackground } from "@/components/PaperShaderBackground";
 import { caseStudies } from "@/components/TheCollection";
 import { demoProjects } from "@/components/concepts/projects";
@@ -148,9 +149,7 @@ export function OrbitHome() {
                 <br />
                 Shorter paths to yes.
               </h1>
-            </div>
-            <div className={styles.heroPitch}>
-              <p>
+              <p className={styles.heroCopy}>
                 Stephen designs digital experiences that earn attention, qualify
                 intent, and connect the follow-up behind the click.
               </p>
@@ -165,6 +164,7 @@ export function OrbitHome() {
                 </a>
               </div>
             </div>
+            <HeroPortfolioComposition />
             <dl className={styles.fitLine}>
               <div>
                 <dt>Best fit</dt>

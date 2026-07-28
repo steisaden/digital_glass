@@ -182,6 +182,10 @@ Navigation is a slim glass instrument panel rather than an oversized capsule. St
 
 The project stage is the signature component: one selected live-work capture at dominant scale, an explicit category and short description, and nearby project selectors that make range discoverable without forcing a long scroll.
 
+### Hero Device Showcase
+
+The opening proof moment pairs one browser window with one companion phone frame, both showing the same selected project. It may rotate through no more than three projects, pauses while hovered or focused, stops when offscreen, and becomes manual under reduced-motion preferences. Device labels describe real delivery surfaces—website, mobile, and PWA—while the surrounding page remains open rather than turning into a collage or oversized glass container.
+
 ## Do's and Don'ts
 
 ### Do:
